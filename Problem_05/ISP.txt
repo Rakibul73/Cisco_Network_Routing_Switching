@@ -49,11 +49,7 @@ ISP(config-if)#
 ISP(config-if)#
 ISP(config-if)#exit
 ISP(config)#
-ISP(config)#ip route 0.0.0.0 0.0.0.0 s0/0/0
-ISP(config)#no ip route 0.0.0.0 0.0.0.0 s0/0/0
 ISP(config)#ip route 10.0.0.0 255.255.255.252 s0/0/0
-ISP(config)#ip route 10.0.0.4 255.255.255.252 s0/0/1
-ISP(config)#no ip route 10.0.0.4 255.255.255.252 s0/0/1
 ISP(config)#ip route 10.0.0.4 255.255.255.252 s0/0/0
 ISP(config)#ip route 10.0.0.8 255.255.255.252 s0/0/0
 ISP(config)#
@@ -62,29 +58,7 @@ ISP(config)#ip route 192.168.1.0 255.255.255.0 s0/0/0
 ISP(config)#ip route 172.16.0.0 255.255.0.0 s0/0/0
 ISP(config)#ip route 172.20.0.0 255.255.0.0 s0/0/0
 ISP(config)#
-ISP(config)#no ip route 0.0.0.0 0.0.0.0 fa0/0
-%No matching route to delete
-ISP(config)#ip route 0.0.0.0 0.0.0.0 fa0/0
-ISP(config)#no ip route 0.0.0.0 0.0.0.0 fa0/0
 ISP(config)#
-ISP(config)#
-ISP(config)#ip route 192.168.0.0 255.255.0.0 s0/1/1
-%Invalid interface type and number
-ISP(config)#no ip route 192.168.0.0 255.255.0.0 s0/1/1
-%Invalid interface type and number
-ISP(config)#
-ISP(config)#
-ISP(config)#ip route 192.168.0.0 255.255.0.0 s0/0/0
-ISP(config)#no ip route 192.168.0.0 255.255.0.0 s0/0/0
-ISP(config)#
-ISP(config)#
-ISP(config)#
-ISP(config)#no ip route 192.168.0.128 255.255.0.0 s0/0/0
-%Inconsistent address and mask
-ISP(config)#no ip route 192.168.0.128 255.255.255.0 s0/1/1
-%Invalid interface type and number
-ISP(config)#no ip route 192.168.0.128 255.255.255.128 s0/0/0
-%No matching route to delete
 ISP(config)#ip route 192.168.0.128 255.255.255.128 s0/0/0
 ISP(config)#
 ISP(config)#
