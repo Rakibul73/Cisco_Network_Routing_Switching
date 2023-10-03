@@ -108,3 +108,9 @@ Building configuration...
 [OK]
 HQ#
 ```
+
+
+* Encrypt the clear text passwords.
+
+  ```bash
+  HQ(config)# `service password-encryption`
