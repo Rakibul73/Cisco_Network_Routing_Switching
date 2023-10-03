@@ -10,7 +10,7 @@
 <br/>
 
 
-```bash
+```
 Router> (This is User EXEC Mode.)
 Router> en
 Router# (This is Privileged EXEC Mode.)
