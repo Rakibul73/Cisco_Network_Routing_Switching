@@ -123,3 +123,30 @@ Router(config-if)#	(This is Interface level within configuration mode)
     [OK]
     HQ#
     ```
+
+* Display the routing table on the router.
+    ```bash
+    HQ# show ip route
+    ```
+
+* Display a summary list of the interfaces on the router
+    ```bash
+    HQ# show ip interface brief
+    ```
+
+* displays statistics for the network interfaces
+    ```bash
+    HQ# show interfaces
+    ```
+
+* erase the startup configuration file from NVRAM.
+    ```bash
+    HQ# erase startup-config
+    ```
+
+* Reload switch to remove old configuration information.
+    ```bash
+    HQ# reload
+    ```
+
+<hr/>
