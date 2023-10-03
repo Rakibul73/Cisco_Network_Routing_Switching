@@ -1,0 +1,216 @@
+Step 2: Configure the router. 
+a. Console into the router and enable privileged EXEC mode.
+enable
+
+b. Enter into global configuration mode.
+configure terminal
+
+c. Disable DNS lookup.
+no ip domain-lookup
+
+d. Assign a device name to the router.
+hostname R1
+
+e. Require that a minimum of 10 characters be used for all passwords.
+security passwords min-length 10
+
+f. Assign cisco12345 as the privileged EXEC encrypted password.
+enable secret cisco12345
+
+g. Assign ciscoconpass as the console password and enable login.
+line console 0
+password ciscoconpass
+login
+exit
+
+h. Assign ciscovtypass as the vty password and enable login,
+line vty 0 4
+password ciscovtypass
+login
+
+i. Configure logging synchronous on the console and vty lines.
+[Information or debug output from the router sent to the console will not interrupt the command you are typing. 
+The command will be moved to a new line.]
+
+logging synchronous
+exit
+line console 0
+logging synchronous
+exit
+
+j. Encrypt the clear text passwords.
+service password-encryption
+
+k. Create a banner that warns anyone accessing the device that unauthorized access is prohibited.
+banner motd #unauthorized access is prohibited#
+
+l. Configure the IP addresses, an interface description, and activate G0/1 interface on the router.
+interface G0/1
+ip address 192.168.1.1 255.255.255.0
+description Connection to S1 F0/5
+no shutdown
+end
+
+m. Save the running configuration to the startup configuration file.
+copy running-config startup-config
+
+================================================================================================================
+
+Part 3: Configure the Router to Allow CCP Access 
+[Packet Tracer is limited. It doesn't support this feature.]
+
+Step 1: Enable HTTP and HTTPS server services on the router.
+ip http server
+ip http secure-server
+Step 2: Enable HTTP authentication to use the local database on the router.
+ip http authentication local
+
+This works:
+Step 3: Configure the router for CCP access.
+en
+username admin privilege 15 secret adminpass1
+exit
+================================================================================================================
+
+Part 4: (Optional) Install and Set Up CCP on PC-A
+[Requires physical devices]
+
+================================================================================================================
+
+Part 5: Configure R1 Settings Using CCP 
+Step 1: View the status of the interfaces on R1. 
+en
+show ip interface
+
+Step 2: Use the Ethernet LAN wizard to configure interface G0/0. 
+a. On the CCP toolbar, click Configure.
+configure terminal
+
+b. In the left navigation pane, click Interface Management > Interface and Connections to display the Interfaces and Connections screen in the right content pane.
+c. Click Create New Connection to start the Ethernet LAN wizard.
+d. When you are prompted to enable AAA on the router, click No.
+e. Click Next to be guided through the Layer 3 Ethernet interface creation process.
+f. Keep the Configure this interface for straight routing radio button selected and click Next.
+
+interface G0/0
+
+g. Enter 192.168.0.1 in the IP address field and 255.255.255.0 in the Subnet mask field and click Next.
+ip address 192.168.0.1 255.255.255.0
+no shutdown
+exit
+
+h. Keep the No radio button selected on the DHCP server screen and click Next.
+no service dhcp
+
+i. Review the summary screen and click Finish.
+exit
+
+j. Click the Save running config to device’s startup config check box, and then click Deliver. This adds
+the commands shown in the preview window to the running configuration, and then saves the running
+configuration to the startup configuration on the router.
+
+copy running-config startup-config			/	copy run start
+<ENTER>
+
+k. The Commands Delivery Status window displays. Click OK to close this window. You will be routed back
+to the Interfaces and Connections screen; G0/0 should have turned green and displayed as Up in the
+Status column.
+
+show ip interface
+
+ Step 3: Set the date and time on the router. 
+a. In the left navigation pane, select Router > Time > Date and Time to display the Additional Tasks >
+Date/Time screen in the right content pane. Click Change Settings...
+
+show clock details
+
+b. In the Date and Time Properties window, edit the Date, Time, and Time Zone. Click Apply.
+// clock set hh:mm:ss dd mmm yyyy
+// clock timezone [zone] [hours-offset] [minutes-offset]
+
+clock set 1:13:00 19 Aug 2022
+conf t
+clock timezone BDT 6
+
+ Step 4: Add a new user account to the local database. 
+a. In the left navigation pane, select Router > Router Access > User Accounts/View to display the
+Additional Tasks > User Accounts/View screen in the content pane on the right. Click the Add... button.
+b. Enter ccpadmin in the Username: field. Enter ciscoccppass in the New Password: and Confirm New
+Password: fields. Select 15 in the Privilege Level: drop-down list. Click OK to add this user to the local database.
+
+username ccpadmin privilege 15 secret ciscoccppass
+exit
+
+c. In the Deliver Configuration to Device window, click the Save running config to device’s startup config
+check box, and then click Deliver.
+copy run start
+<ENTER>
+
+d. Review the information in the Commands Delivery Status window, and click OK. The new user account
+should now appear in the content pane on the right.
+show run | b username
+
+ Step 5: Edit vty line settings. ---
+a. In the left navigation pane, select Router Access > VTY to display the Additional Tasks > VTYs screen in
+the content pane on the right. Click Edit...
+conf t
+line vty 0 4
+
+b. In the Edit VTY Lines window, change the Time out field to 15 minutes. Click the Input Protocol >
+Telnet check box. Review the other options available. Also, select the SSH checkbox. Then click OK.
+
+exec-timeout 15 0
+transport input ssh
+login local
+end
+
+c. Review the commands that will be delivered to the running configuration on the Deliver Configuration to
+Device screen and click Deliver. In the Commands Delivery Status window, click OK. The content pane
+on the right should reflect the changes to the EXEC timeout value.
+show run | b exec
+
+================================================================================================================
+
+Part 6: Use CCP Utilities  
+Step 1: Save the router’s running configuration to the startup configuration. 
+copy run start
+<ENTER>
+
+ Step 2: Use the Ping utility to test connectivity to PC-B. 
+a. In the Utilities pane, click Ping and Traceroute to display the Ping and Traceroute screen in the content
+pane. Enter 192.168.0.3 in the Destination*: field and then click Ping. Use the scrollbar to the right of the
+results box to view the results of your ping.
+
+Ping PC B to PC A. The first time will fail due to no ARP entry.
+
+ Step 3: Use the View utility to show the running configuration for the router. 
+a. In the Utilities pane, click View > IOS Show Commands to display the IOS Show Commands screen in
+the content pane.
+b. Select show run from the drop-down list and click Show. The router’s running configuration is displayed
+in the content pane.
+
+show run
+
+Step 4: Close CCP.
+Close the CCP window. When a Windows Internet Explorer confirmation window displays, click Leave this page.
+exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Solution By D. M. Nadim Hayder
