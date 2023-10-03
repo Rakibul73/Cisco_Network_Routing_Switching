@@ -94,6 +94,21 @@ Router(config-if)#	(This is Interface level within configuration mode)
     HQ# clock set 17:00:00 03 Oct 2023
     ```
 
+* Set the clock timezone on the router;
+    ```bash
+    HQ# clock timezone BDT 6
+    ```
+
+* set line console idle EXEC sessions to 3 minutes and 30 seconds , and 4 minutes for vty
+    ```bash
+    HQ(config)#line con 0
+    HQ(config-line)# exec-timeout 3 30
+    HQ(config-line)# exit
+    HQ(config)#line vty 0 4
+    HQ(config-line)#exec-timeout 4 0
+    HQ(config-line)# exit
+    HQ(config)#
+    ```
 
 * set ip route for network 192.168.1.0/24 , mask 255.255.255.0 , hop s0/0/0
     ```bash
