@@ -14,7 +14,7 @@ Router> (This is User EXEC Mode.)
 ```
 
 This is Privileged EXEC Mode.
-```
+```bash
 Router# (This is Privileged EXEC Mode.)
 ```
 
