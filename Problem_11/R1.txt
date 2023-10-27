@@ -1,0 +1,199 @@
+Cisco 1841 (revision 5.0) with 114688K/16384K bytes of memory.
+Processor board ID FTX0947Z18E
+M860 processor: part number 0, mask 49
+2 FastEthernet/IEEE 802.3 interface(s)
+4 Low-speed serial(sync/async) network interface(s)
+191K bytes of NVRAM.
+32768K bytes of ATA CompactFlash (Read/Write)
+Cisco IOS Software, 1841 Software (C1841-IPBASE-M), Version 12.3(14)T7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Mon 15-May-06 14:54 by pt_team
+
+Press RETURN to get started!
+
+
+%LINK-5-CHANGED: Interface Serial0/1/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/1, changed state to up
+
+********************************
+  !!!AUTHORIZED ACCESS ONLY!!!
+********************************
+
+
+User Access Verification
+
+Password: 
+Password: 
+Password: 
+% Bad passwords
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Press RETURN to get started!
+
+
+********************************
+  !!!AUTHORIZED ACCESS ONLY!!!
+********************************
+
+
+User Access Verification
+
+Password: 
+Password: 
+Password: 
+% Bad passwords
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Press RETURN to get started!
+
+
+********************************
+  !!!AUTHORIZED ACCESS ONLY!!!
+********************************
+
+
+User Access Verification
+
+Password: 
+
+R1>en
+Password: 
+R1#conf
+R1#configure ter
+R1#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+R1(config)#int s0/0/0
+R1(config-if)#ip add
+R1(config-if)#ip address 10.1.244.1 255.255.252.0
+R1(config-if)#clo
+R1(config-if)#clock rat
+R1(config-if)#clock rate 64000
+R1(config-if)#no shut
+
+%LINK-5-CHANGED: Interface Serial0/0/0, changed state to down
+R1(config-if)#
+R1(config-if)#
+R1(config-if)#int s0/0/1
+R1(config-if)#ip add
+R1(config-if)#ip address 10.1.248.1 255.255.252.0
+R1(config-if)#no shut
+
+%LINK-5-CHANGED: Interface Serial0/0/1, changed state to down
+R1(config-if)#
+R1(config-if)#co
+R1(config-if)#clo
+R1(config-if)#clock ra
+R1(config-if)#clock rate 64000
+R1(config-if)#
+R1(config-if)#int s0/1/0
+R1(config-if)#ip add
+R1(config-if)#ip address 10.1.252.1 255.255.252.0
+R1(config-if)#no shut
+
+%LINK-5-CHANGED: Interface Serial0/1/0, changed state to down
+R1(config-if)#
+R1(config-if)#clock rate 64000
+R1(config-if)#
+R1(config-if)#router rip
+R1(config-router)#
+R1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#conf
+R1#configure ter
+R1#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+R1(config)#router rip
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#default-information originate 
+R1(config-router)#pass
+R1(config-router)#passive-interface s
+R1(config-router)#passive-interface serial 0
+R1(config-router)#passive-interface s0/1/1
+R1(config-router)#net
+R1(config-router)#network 10.1.0.0
+R1(config-router)#
+R1(config-router)#exit
+R1(config)#
+R1(config)#ip route
+R1(config)#ip route 209.165.201.0 255.255.255.252 s0/1/1
+R1(config)#no ip route 209.165.201.0 255.255.255.252 s0/1/1
+R1(config)#
+R1(config)#ip route 172.20.0.0 255.255.0.0 s0/1/1
+R1(config)#no ip route 172.20.0.0 255.255.0.0 s0/1/1
+R1(config)#ip route 209.165.201.4 255.255.255.252 s0/1/1
+R1(config)#no ip route 209.165.201.4 255.255.255.252 s0/1/1
+R1(config)#
+R1(config)#ip route 0.0.0.0 0.0.0.0 s0/1/1
+R1(config)#exit
+R1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R1#copy
+R1#copy ru
+R1#copy running-config st
+R1#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+?Bad filename
+%Error parsing filename (Bad file number)
+R1#
+R1#
+R1#
+R1#exit

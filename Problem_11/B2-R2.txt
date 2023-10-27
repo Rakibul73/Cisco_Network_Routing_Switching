@@ -1,0 +1,107 @@
+System Bootstrap, Version 12.1(3r)T2, RELEASE SOFTWARE (fc1)
+Copyright (c) 2000 by cisco Systems, Inc.
+cisco 2811 (MPC860) processor (revision 0x200) with 60416K/5120K bytes of memory
+
+Readonly ROMMON initialized
+
+program load complete, entry point: 0x8000f000, size: 0xc940
+program load complete, entry point: 0x8000f000, size: 0xc940
+
+program load complete, entry point: 0x8000f000, size: 0x3ed1338
+Self decompressing the image :
+######################### [OK]
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, 2800 Software (C2800NM-IPBASE-M), Version 12.3(14)T7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Wed 22-Mar-06 18:40 by pt_team
+Image text-base: 0x40095498, data-base: 0x414E0000
+
+cisco 2811 (MPC860) processor (revision 0x200) with 60416K/5120K bytes of memory
+Processor board ID JAD05190MTZ (4292891495)
+M860 processor: part number 0, mask 49
+4 FastEthernet/IEEE 802.3 interface(s)
+2 Low-speed serial(sync/async) network interface(s)
+239K bytes of non-volatile configuration memory.
+62720K bytes of processor board System flash (Read/Write)
+Cisco IOS Software, 2800 Software (C2800NM-IPBASE-M), Version 12.3(14)T7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Wed 22-Mar-06 18:40 by pt_team
+
+Press RETURN to get started!
+
+
+
+Router>
+Router>en
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname B2-R2
+B2-R2(config)#int fa0/0
+B2-R2(config-if)#ip add
+% Incomplete command.
+B2-R2(config-if)#ip address 172.20.8.1 255.255.254.0
+B2-R2(config-if)#no shut
+
+B2-R2(config-if)#
+B2-R2(config-if)#int fa0/1
+B2-R2(config-if)#ip address 172.20.10.1 255.255.254.0
+B2-R2(config-if)#no shut
+
+B2-R2(config-if)#
+B2-R2(config-if)#int fa1/1
+B2-R2(config-if)#ip address 172.20.14.1 255.255.254.0
+B2-R2(config-if)#no shut
+
+B2-R2(config-if)#
+B2-R2(config-if)#
+B2-R2(config-if)#int fa1/0
+B2-R2(config-if)#ip address 172.20.12.1 255.255.254.0
+B2-R2(config-if)#no shut
+
+B2-R2(config-if)#
+B2-R2(config-if)#int s0/0/0
+B2-R2(config-if)#ip address 172.20.252.2 255.255.254.0
+B2-R2(config-if)#no shut
+
+%LINK-5-CHANGED: Interface Serial0/0/0, changed state to down
+B2-R2(config-if)#
+B2-R2(config-if)#
+B2-R2(config-if)#exit
+B2-R2(config)#
+B2-R2(config)#router rip
+B2-R2(config-router)#
+B2-R2(config-router)#network 172.20.0.0
+B2-R2(config-router)#passive-interface fa0/0
+B2-R2(config-router)#passive-interface fa0/1
+B2-R2(config-router)#passive-interface fa1/1
+B2-R2(config-router)#passive-interface fa1/0
+B2-R2(config-router)#
+B2-R2(config-router)#exit
+B2-R2(config)#exit
+B2-R2#
+B2-R2#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+B2-R2#

@@ -1,0 +1,142 @@
+System Bootstrap, Version 12.3(8r)T8, RELEASE SOFTWARE (fc1)
+Cisco 1841 (revision 5.0) with 114688K/16384K bytes of memory.
+
+Readonly ROMMON initialized
+
+Self decompressing the image :
+######################### [OK]
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, 1841 Software (C1841-IPBASE-M), Version 12.3(14)T7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Mon 15-May-06 14:54 by pt_team
+Image text-base: 0x6007D180, data-base: 0x61400000
+
+Port Statistics for unclassified packets is not turned on.
+Cisco 1841 (revision 5.0) with 114688K/16384K bytes of memory.
+Processor board ID FTX0947Z18E
+M860 processor: part number 0, mask 49
+2 FastEthernet/IEEE 802.3 interface(s)
+4 Low-speed serial(sync/async) network interface(s)
+191K bytes of NVRAM.
+32768K bytes of ATA CompactFlash (Read/Write)
+Cisco IOS Software, 1841 Software (C1841-IPBASE-M), Version 12.3(14)T7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Mon 15-May-06 14:54 by pt_team
+
+Press RETURN to get started!
+
+
+%LINK-5-CHANGED: Interface Serial0/1/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/1/1, changed state to up
+
+********************************
+  !!!AUTHORIZED ACCESS ONLY!!!
+********************************
+
+
+User Access Verification
+
+Password: 
+Password: 
+
+R2>
+R2>
+R2>en
+Password: 
+R2#cof
+R2#cofi
+R2#con
+R2#confi
+Configuring from terminal, memory, or network [terminal]? 
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#
+R2(config)#
+R2(config)#
+R2(config)#
+R2(config)#int s0/0/0
+R2(config-if)#ip add
+R2(config-if)#ip address 172.20.250.1 255.255.254.0
+R2(config-if)#no shut
+
+R2(config-if)#
+%LINK-5-CHANGED: Interface Serial0/0/0, changed state to up
+
+R2(config-if)#clo
+R2(config-if)#clock rate
+R2(config-if)#clock rate 64000
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/0, changed state to up
+
+R2(config-if)#
+R2(config-if)#clock rate 64000
+R2(config-if)#
+R2(config-if)#
+R2(config-if)#int s0/0/1
+R2(config-if)#ip address 172.20.252.1 255.255.254.0
+R2(config-if)#clock rate 64000
+R2(config-if)#no shut
+
+R2(config-if)#
+%LINK-5-CHANGED: Interface Serial0/0/1, changed state to up
+
+R2(config-if)#int s0/0/0
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to up
+               ^
+% Invalid input detected at '^' marker.
+	
+R2(config-if)#
+R2(config-if)#
+R2(config-if)#int s0/1/0
+R2(config-if)#clock rate 64000
+R2(config-if)#
+R2(config-if)#ip address 172.20.254.1 255.255.254.0
+R2(config-if)#no shut
+R2(config)#
+R2(config)#
+R2(config)#
+R2(config)#ip route 0.0.0.0 0.0.0.0 s0/1/1
+R2(config)#router rip
+R2(config-router)#
+R2(config-router)#default-information originate
+R2(config-router)#
+R2(config-router)#passive-interface s0/1/1
+R2(config-router)#ne
+R2(config-router)#network 172.20.0.0
+R2(config-router)#
+R2(config-router)#exit
+R2(config)#
+R2(config)#exit
+R2#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R2#
+R2#
+R2#
+R2#cop
+R2#copy ru
+R2#copy running-config st
+R2#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+R2#
+R2#
+R2#
+R2#
+R2#

@@ -1,0 +1,83 @@
+System Bootstrap, Version 12.3(8r)T8, RELEASE SOFTWARE (fc1)
+Cisco 1841 (revision 5.0) with 114688K/16384K bytes of memory.
+
+Readonly ROMMON initialized
+
+Self decompressing the image :
+######################### [OK]
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, 1841 Software (C1841-IPBASE-M), Version 12.3(14)T7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Mon 15-May-06 14:54 by pt_team
+Image text-base: 0x6007D180, data-base: 0x61400000
+
+Port Statistics for unclassified packets is not turned on.
+Cisco 1841 (revision 5.0) with 114688K/16384K bytes of memory.
+Processor board ID FTX0947Z18E
+M860 processor: part number 0, mask 49
+2 FastEthernet/IEEE 802.3 interface(s)
+2 Low-speed serial(sync/async) network interface(s)
+191K bytes of NVRAM.
+32768K bytes of ATA CompactFlash (Read/Write)
+Cisco IOS Software, 1841 Software (C1841-IPBASE-M), Version 12.3(14)T7, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Mon 15-May-06 14:54 by pt_team
+
+Press RETURN to get started!
+
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+%LINK-5-CHANGED: Interface Serial0/0/1, changed state to up
+
+%LINK-5-CHANGED: Interface Serial0/0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to up
+
+********************************
+  !!!AUTHORIZED ACCESS ONLY!!!
+********************************
+
+
+User Access Verification
+
+Password: 
+Password: 
+
+ISP-R2>en
+Password: 
+ISP-R2#
+ISP-R2#cofi
+Translating "cofi"
+% Unknown command or computer name, or unable to find computer address
+
+ISP-R2#
+ISP-R2#confi
+Configuring from terminal, memory, or network [terminal]? 
+Enter configuration commands, one per line.  End with CNTL/Z.
+ISP-R2(config)#
+ISP-R2(config)#ip route 172.20.0.0 255.255.0.0 s0/0/0
+ISP-R2(config)#
+ISP-R2(config)#
+ISP-R2(config)#ip route 10.1.0.0 255.255.0.0 s0/0/1
+ISP-R2(config)#
+ISP-R2(config)#
+ISP-R2(config)#

@@ -149,4 +149,16 @@ Router(config-if)#	(This is Interface level within configuration mode)
     HQ# reload
     ```
 
+* HQ router needs to send the default route information 
+    ```bash
+    HQ(config)# router rip
+    HQ(config-router)# default-information originate 
+    ```
+
+* HQ router need to disable RIP updates on FastEthernet0/0 interface
+    ```bash
+    HQ(config)# router rip
+    HQ(config-router)# passive-interface FastEthernet0/0
+    ```
+
 <hr/>

@@ -1,0 +1,70 @@
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2006 by Cisco Systems, Inc.
+Compiled Wed 22-Mar-06 18:40 by pt_team
+
+
+         --- System Configuration Dialog ---
+
+Would you like to enter the initial configuration dialog? [yes/no]: no
+
+
+Press RETURN to get started!
+
+
+
+Router>en
+Router#
+Router#
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname B2-R1
+B2-R1(config)#int fa0/0
+B2-R1(config-if)#ip add
+% Incomplete command.
+B2-R1(config-if)#ip address 10.1.16.1 255.255.252.0
+B2-R1(config-if)#no shut
+
+B2-R1(config-if)#
+B2-R1(config-if)#int fa0/1
+B2-R1(config-if)#ip address 10.1.20.1 255.255.252.0
+B2-R1(config-if)#no shut
+
+B2-R1(config-if)#
+B2-R1(config-if)#int fa1/1
+B2-R1(config-if)#ip address 10.1.28.1 255.255.252.0
+B2-R1(config-if)#no shut
+
+B2-R1(config-if)#
+B2-R1(config-if)#
+B2-R1(config-if)#int fa1/0
+B2-R1(config-if)#ip address 10.1.24.1 255.255.252.0
+B2-R1(config-if)#no shut
+
+B2-R1(config-if)#
+B2-R1(config-if)#int s0/0/0
+B2-R1(config-if)#ip address 10.1.248.2 255.255.252.0
+B2-R1(config-if)#no shut
+
+B2-R1(config-if)#
+B2-R1(config-if)#
+B2-R1(config-if)#exit
+B2-R1(config)#
+B2-R1(config)#router rip
+B2-R1(config-router)#
+B2-R1(config-router)#network 10.1.0.0
+B2-R1(config-router)#passive-interface fa0/0
+B2-R1(config-router)#passive-interface fa0/1
+B2-R1(config-router)#passive-interface fa1/1
+B2-R1(config-router)#passive-interface fa1/0
+B2-R1(config-router)#
+B2-R1(config-router)#exit
+B2-R1(config)#exit
+B2-R1#
+B2-R1#
+B2-R1#
+B2-R1#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+B2-R1#
+B2-R1#
