@@ -1,0 +1,67 @@
+
+For HQ
+
+en
+conf t
+int s0/0/1
+ip address 209.165.201.1 255.255.255.252
+no shut
+int s0/0/0
+no shut
+ip address 172.16.71.1 255.255.255.252
+int s0/1/0
+ip address 172.16.71.5 255.255.255.252
+clock rate 64000
+no shut
+int f0/0
+no shut
+ip address 172.16.66.1 255.255.254.0
+int f0/1
+no shut
+ip address 172.16.64.1 255.255.254.0
+end
+copy run startup-config 
+
+================================================
+
+
+For East 
+
+en
+conf t
+int Fa0/0
+ip addr 172.16.69.1 255.255.255.0
+no shut
+int Fa0/1
+ip addr 172.16.68.1 255.255.255.0
+no shut
+int S0/0/1
+ip addr 172.16.71.6 255.255.255.252
+no shut
+end
+copy run start
+
+
+================================================
+
+
+For West
+
+
+en
+conf t
+int Fa0/0
+ip addr 172.16.70.1 255.255.255.128
+no shut
+int Fa0/0
+ip addr 172.16.70.129 255.255.255.128
+int Fa0/1
+ip addr 172.16.70.1 255.255.255.128
+no shut
+int S0/0/0
+clock rate 64000
+ip addr 172.16.71.2 255.255.255.252
+no shut
+end
+copy run start
+
