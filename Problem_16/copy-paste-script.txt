@@ -1,0 +1,43 @@
+
+
+HQ
+
+en
+conf t
+int fa0/0
+ip address 172.16.40.1 255.255.252.0
+int fa0/1
+ip address 172.16.32.1 255.255.248.0
+end
+copy running-config startup-config 
+
+--------------------------------------
+
+
+
+East
+
+en
+conf t
+int fa0/0
+ip address 172.16.52.1 255.255.252.0
+int fa0/1
+ip address 172.16.48.1 255.255.252.0
+end
+copy running-config startup-config 
+
+--------------------------------------
+
+
+
+West
+
+en
+conf t
+int fa0/0
+ip address 172.16.58.1 255.255.255.0
+int fa0/1
+ip address 172.16.56.1 255.255.254.0
+end
+copy running-config startup-config 
+
