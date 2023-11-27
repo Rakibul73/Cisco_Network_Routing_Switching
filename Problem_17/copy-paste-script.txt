@@ -1,0 +1,359 @@
+B1-R1
+
+
+en
+conf t
+hostname B1-R1
+int fa0/0
+ip add
+ip address 10.1.0.1 255.255.224.0
+no shut
+
+int fa0/1
+ip address 10.1.32.1 255.255.224.0
+no shut
+
+int fa1/0
+ip address 10.1.64.1 255.255.224.0
+no shut
+
+int fa1/1
+ip address 10.1.96.1 255.255.224.0
+no shut
+
+int s0/0/0
+ip address 10.1.255.242 255.255.255.252
+no shut
+
+exit
+
+router rip
+version 2
+no auto-summary
+passive-interface Fa0/0
+passive-interface Fa0/1
+passive-interface Fa1/0
+passive-interface Fa1/1
+network 10.1.0.0
+
+exit
+
+exit
+
+copy running-config startup-config
+
+
+
+===================================================
+B2-R1
+
+
+en
+conf t
+hostname B2-R1
+int fa0/0
+ip add
+ip address 10.1.128.1 255.255.240.0
+no shut
+
+int fa0/1
+ip address 10.1.144.1 255.255.240.0
+no shut
+
+int fa1/0
+ip address 10.1.160.1 255.255.240.0
+no shut
+
+int fa1/1
+ip address 10.1.176.1 255.255.240.0
+no shut
+
+int s0/0/0
+ip address 10.1.255.246 255.255.255.252
+no shut
+
+exit
+
+router rip
+version 2
+no auto-summary
+passive-interface Fa0/0
+passive-interface Fa0/1
+passive-interface Fa1/0
+passive-interface Fa1/1
+network 10.1.0.0
+
+
+exit
+
+exit
+
+copy running-config startup-config
+
+===================================================
+B3-R1
+
+
+en
+conf t
+hostname B3-R1
+int fa0/0
+ip add
+ip address 10.1.192.1 255.255.248.0
+no shut
+
+int fa0/1
+ip address 10.1.200.1 255.255.248.0
+no shut
+
+int fa1/0
+ip address 10.1.208.1 255.255.248.0
+no shut
+
+int fa1/1
+ip address 10.1.216.1 255.255.248.0
+no shut
+
+int s0/0/0
+ip address 10.1.255.250 255.255.255.252
+no shut
+
+exit
+
+router rip
+version 2
+no auto-summary
+passive-interface Fa0/0
+passive-interface Fa0/1
+passive-interface Fa1/0
+passive-interface Fa1/1
+network 10.1.0.0
+
+
+
+exit
+
+exit
+
+copy running-config startup-config
+
+
+===================================================
+===================================================
+B1-R2
+
+
+en
+conf t
+hostname B1-R2
+int fa0/0
+ip add
+ip address 172.20.0.1 255.255.252.0
+no shut
+
+int fa0/1
+ip address 172.20.4.1 255.255.252.0
+no shut
+
+int fa1/0
+ip address 172.20.8.1 255.255.252.0
+no shut
+
+int fa1/1
+ip address 172.20.12.1 255.255.252.0
+no shut
+
+int s0/0/0
+ip address 172.20.255.242 255.255.255.252
+no shut
+
+
+exit
+
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+
+
+exit
+
+copy running-config startup-config
+
+===================================================
+B2-R2
+
+
+en
+conf t
+hostname B2-R2
+int fa0/0
+ip add
+ip address 172.20.16.1 255.255.254.0
+no shut
+
+int fa0/1
+ip address 172.20.18.1 255.255.254.0
+no shut
+
+int fa1/0
+ip address 172.20.20.1 255.255.254.0
+no shut
+
+int fa1/1
+ip address 172.20.22.1 255.255.254.0
+no shut
+
+int s0/0/0
+ip address 172.20.255.246 255.255.255.252
+no shut
+
+
+exit
+
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+
+
+
+exit
+
+copy running-config startup-config
+
+===================================================
+B3-R2
+
+
+en
+conf t
+hostname B3-R2
+int fa0/0
+ip add
+ip address 172.20.24.1 255.255.255.0
+no shut
+
+int fa0/1
+ip address 172.20.25.1 255.255.255.0
+no shut
+
+int fa1/0
+ip address 172.20.26.1 255.255.255.0
+no shut
+
+int fa1/1
+ip address 172.20.27.1 255.255.255.0
+no shut
+
+int s0/0/0
+ip address 172.20.255.250 255.255.255.252
+no shut
+
+exit
+
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+
+
+exit
+
+copy running-config startup-config
+
+===================================================
+R2 (pass = `cisco` then `class`)
+
+
+conf t
+
+int s0/0/0
+ip address 172.20.255.241 255.255.255.252
+clock rate 64000
+no shut
+
+int s0/0/1
+ip address 172.20.255.245 255.255.255.252
+clock rate 64000
+no shut
+
+int s0/1/0
+ip address 172.20.255.249 255.255.255.252
+clock rate 64000
+no shut
+
+
+exit
+
+ip route 0.0.0.0 0.0.0.0 s0/1/1
+ip route 172.20.0.0 255.255.240.0 s0/0/0
+ip route 172.20.16.0 255.255.248.0 s0/0/1
+ip route 172.20.24.0 255.255.252.0 s0/1/0
+
+
+
+exit
+
+copy running-config startup-config
+
+===================================================
+R1 (pass = `cisco` then `class`)
+
+
+conf t
+
+int s0/0/0
+ip address 10.1.255.241 255.255.255.252
+clock rate 64000
+no shut
+
+int s0/0/1
+ip address 10.1.255.245 255.255.255.252
+clock rate 64000
+no shut
+
+int s0/1/0
+ip address 10.1.255.249 255.255.255.252
+clock rate 64000
+no shut
+
+exit
+
+router rip
+version 2
+no auto-summary
+passive-interface s0/1/1
+default-information originate
+network 10.1.0.0
+
+exit
+
+ip route 0.0.0.0 0.0.0.0 s0/1/1
+
+
+exit
+
+copy running-config startup-config
+
+
+====================================================
+====================================================
+ISP-R1 (pass = `cisco` then `class`)
+
+
+conf t
+
+ip route 172.20.0.0 255.255.0.0 s0/0/1
+ip route 10.1.0.0 255.255.0.0 s0/0/0
+
+
+exit
+
+copy running-config startup-config
+
+====================================================
+ISP-R2 (pass = `cisco` then `class`)
+
+
+conf t
+
+ip route 172.20.0.0 255.255.0.0 s0/0/0
+ip route 10.1.0.0 255.255.0.0 s0/0/1
+
+
+exit
+
+copy running-config startup-config
+
