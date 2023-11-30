@@ -1,0 +1,242 @@
+For B1
+
+en
+conf ter
+
+int fa0/0
+ip address 192.168.1.1 255.255.255.192
+no shut
+
+int fa0/1
+no shut
+ip address 192.168.1.65 255.255.255.192
+
+int fa1/0
+no shut
+ip address 192.168.1.129 255.255.255.192
+
+int fa1/1
+ip address 192.168.1.193 255.255.255.192
+no shut
+
+int s0/0/0
+no shut
+ip address 10.0.0.2 255.255.255.252
+exit
+
+line console 0
+password cisco
+login
+exit
+
+line vty 0 15
+password cisco
+login
+exit
+
+hostname B1
+
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+
+exit
+
+copy running-config startup-config 
+
+=====================================================
+For B2
+
+en
+conf ter
+
+int fa0/0
+ip address 172.16.0.1 255.255.252.0
+no shut
+
+int fa0/1
+no shut
+ip address 172.16.4.1 255.255.252.0
+
+int fa1/0
+no shut
+ip address 172.16.8.1 255.255.252.0
+
+int fa1/1
+ip address 172.16.12.1 255.255.252.0
+no shut
+
+int s0/0/0
+no shut
+ip address 10.0.0.6 255.255.255.252
+exit
+
+line console 0
+password cisco
+login
+exit
+
+line vty 0 15
+password cisco
+login
+exit
+
+hostname B2
+
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+
+exit
+
+copy running-config startup-config 
+
+=====================================================
+
+For B3
+
+en
+conf ter
+
+int fa0/0
+ip address 172.20.0.1 255.255.224.0
+no shut
+
+int fa0/1
+no shut
+ip address 172.20.32.1 255.255.224.0
+
+int fa1/0
+no shut
+ip address 172.20.64.1 255.255.224.0
+
+int fa1/1
+ip address 172.20.96.1 255.255.224.0
+no shut
+
+int s0/0/0
+no shut
+ip address 10.0.0.10 255.255.255.252
+exit
+
+line console 0
+password cisco
+login
+exit
+
+line vty 0 15
+password cisco
+login
+exit
+
+hostname B3
+
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+
+exit
+
+copy running-config startup-config 
+
+
+===================================================
+
+
+For HQ
+
+
+
+en
+
+confi ter
+
+int fa0/0
+ip address 192.168.0.129 255.255.255.224
+no shut
+
+
+int fa0/1
+ip address 192.168.0.161 255.255.255.224
+no shut
+
+
+int s0/0/0
+ip address 10.0.0.1 255.255.255.252
+no shut
+clock rate 64000
+
+int s0/0/1
+clock rate 64000
+ip address 10.0.0.5 255.255.255.252
+no shut
+
+
+int s0/1/1
+no shut
+ip address 209.165.201.2 255.255.255.252
+
+int s0/1/0
+no shut
+clock rate 64000
+ip address 10.0.0.9 255.255.255.252
+exit
+
+
+
+
+
+line console 0
+password cisco
+login
+
+line vty 0 15
+password cisco
+login
+exit
+
+
+hostname HQ
+
+
+ip route 0.0.0.0 0.0.0.0 s0/1/1
+ip route 192.168.1.0 255.255.255.0 s0/0/0
+ip route 172.16.0.0 255.255.0.0 s0/0/1
+ip route 172.20.0.0 255.255.0.0 s0/1/0
+
+
+exit
+
+copy running-config startup-config 
+
+
+===============================================
+
+For ISP
+
+
+
+conf ter
+hostname ISP
+
+int s0/0/0
+ip address 209.165.201.1 255.255.255.252
+no shut
+clock rate 64000
+
+int fa0/0
+ip address 209.165.200.225 255.255.255.252
+no shut
+exit
+
+ip route 10.0.0.0 255.255.255.252 s0/0/0
+ip route 10.0.0.4 255.255.255.252 s0/0/0
+ip route 10.0.0.8 255.255.255.252 s0/0/0
+
+ip route 192.168.1.0 255.255.255.0 s0/0/0
+ip route 172.16.0.0 255.255.0.0 s0/0/0
+ip route 172.20.0.0 255.255.0.0 s0/0/0
+
+ip route 192.168.0.128 255.255.255.128 s0/0/0
+
+exit
+
+copy running-config startup-config 
+
+
+
+
