@@ -2,7 +2,10 @@
 
 #### Installations
 
-* **Cisco Packet Tracer** can be downloaded from [here](https://www.netacad.com/portal/resources/packet-tracer)
+* **Cisco Packet Tracer v7.3.1** can be downloaded from [here](https://drive.google.com/file/d/1LXq7vFTgzuyciKdXu7eNJ7aeOtxlyVZF/view?usp=drive_link)
+* **Cisco Packet Tracer v8.2.0** can be downloaded from [here](https://drive.google.com/file/d/132jZYzdXUlHqpy4HtyAavAp6Ed-NmY8z/view?usp=drive_link)
+
+Note: Use Packet Tracer version 7.3.1 or it won't give you 100% 
 <hr/>
 
 
