@@ -1,0 +1,168 @@
+
+
+For HQ
+
+
+en
+
+enable
+config terminal 
+
+hostname HQ
+
+int fa0/0
+ip address 192.168.64.1 255.255.255.0
+no shutdown 
+exit
+
+int fa0/1
+ip address 192.168.65.1 255.255.255.0
+no shutdown 
+exit
+
+int s0/0/0
+ip address 10.0.0.1 255.255.255.252
+clock rate 64000
+no shutdown 
+exit
+
+int s0/0/1
+ip address 10.0.0.5 255.255.255.252
+clock rate 64000
+no shutdown 
+exit
+
+line console 0
+password cisco
+login
+exit
+line vty 0
+password cisco
+login
+exit
+
+enable secret class
+
+ip route 172.24.0.0 255.252.0.0 s0/0/0
+ip route 192.168.0.0 255.255.252.0 s0/0/1
+
+exit
+
+copy running-config startup-config 
+
+
+
+===============================================
+
+For B1
+
+
+en
+
+enable
+config terminal 
+
+hostname B1
+
+int fa0/0
+ip address 172.24.0.1 255.255.0.0
+no shutdown 
+exit
+
+int fa0/1
+ip address 172.25.0.1 255.255.0.0
+no shutdown 
+exit
+
+int fa1/0
+ip address 172.26.0.1 255.255.0.0
+no shutdown 
+exit
+
+int fa1/1
+ip address 172.27.0.1 255.255.0.0
+no shutdown 
+exit
+
+int s0/0/0
+ip address 10.0.0.2 255.255.255.252
+no shutdown 
+exit
+
+
+line console 0
+password cisco
+login
+exit
+line vty 0
+password cisco
+login
+exit
+
+enable secret class
+
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+
+exit
+
+copy running-config startup-config 
+
+
+
+===============================================
+
+For B2
+
+
+en
+
+enable
+config terminal 
+
+hostname B2
+
+int fa0/0
+ip address 192.168.0.1 255.255.255.0
+no shutdown 
+exit
+
+int fa0/1
+ip address 192.168.1.1 255.255.255.0
+no shutdown 
+exit
+
+int fa1/0
+ip address 192.168.2.1 255.255.255.0
+no shutdown 
+exit
+
+int fa1/1
+ip address 192.168.3.1 255.255.255.0
+no shutdown 
+exit
+
+int s0/0/0
+ip address 10.0.0.6 255.255.255.252
+no shutdown 
+exit
+
+
+line console 0
+password cisco
+login
+exit
+line vty 0
+password cisco
+login
+exit
+
+enable secret class
+
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+
+exit
+
+copy running-config startup-config 
+
+
+===============================================
