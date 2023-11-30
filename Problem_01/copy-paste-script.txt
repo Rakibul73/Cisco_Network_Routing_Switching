@@ -62,6 +62,7 @@ exit
 
 int s0/0/0
 ip address 192.168.1.226 255.255.255.252
+clock rate 64000
 no shutdown 
 exit
 
