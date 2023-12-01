@@ -3,8 +3,8 @@ WAN GIVEN = `10.0.1.0/28`
 Wan = 2 host + 2 extra(Network address + broadcast address) 
 R1 <--> B1 = subnet 0 = 4 host = 2^2
 	n = 32 - 2 = 30
-	10.0.1.0/30
-	10.0.1.3/30
+	Network address = 10.0.1.0/30
+	Last  address =   10.0.1.3/30
 
 R1 <--> B2 = subnet 1 = 4 host = 2^2
 	n = 32 - 2 = 30
