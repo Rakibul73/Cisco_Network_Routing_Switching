@@ -1,0 +1,116 @@
+For ISP
+
+
+
+
+
+
+enable
+
+configure terminal
+
+hostname ISP
+
+interface FastEthernet0/0
+ip address 209.165.202.129 255.255.255.224
+no shutdown
+exit
+
+interface Serial0/0/1
+ip address 209.165.200.225 255.255.255.252
+no shutdown
+exit
+
+router rip
+passive-interface FastEthernet0/0
+network 192.168.1.0
+exit
+
+ip route 0.0.0.0 0.0.0.0 Serial0/0/1
+ip route 10.10.2.0 255.255.254.0 Serial0/0/1
+ip route 192.168.1.0 255.255.255.0 Serial0/0/1
+end
+
+copy running-config startup-config
+
+
+
+==========================================================
+
+For BRANCH
+
+
+
+
+
+enable
+
+configure terminal
+
+hostname BRANCH
+
+interface FastEthernet0/0
+no shutdown
+ip address 10.10.2.1 255.255.254.0
+
+
+interface Serial0/0/0
+clock rate 64000
+no shutdown
+ip address 192.168.1.126 255.255.255.128
+exit
+
+
+router rip
+network 10.0.0.0
+network 192.168.1.0
+passive-interface FastEthernet0/0
+exit
+
+end
+
+copy running-config startup-config
+
+
+============================================================
+
+For HQ
+
+
+
+
+enable
+
+configure terminal
+
+hostname HQ
+
+interface Serial0/0/1
+no shutdown
+clock rate 64000
+ip address 209.165.200.226 255.255.255.252
+exit
+
+interface FastEthernet0/0
+ip address 192.168.1.129 255.255.255.128
+no shutdown
+exit
+
+interface Serial0/0/0
+ip address 192.168.1.1 255.255.255.128
+no shutdown
+exit
+
+router rip
+network 192.168.1.0
+router rip
+passive-interface FastEthernet0/0
+default-information originate
+
+exit
+
+ip route 0.0.0.0 0.0.0.0 Serial0/0/1
+
+end
+
+copy running-config startup-config
