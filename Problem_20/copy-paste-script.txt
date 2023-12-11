@@ -1,0 +1,144 @@
+For 11.6.1.2
+
+
+en
+conf t
+hostname R1
+no ip domain-lookup
+show ip interface brief
+do show ip interface brief
+int Fa0/0
+ip addr 172.16.1.17 255.255.255.240
+no shut
+int S0/0/0
+ip addr 192.168.10.1 255.255.255.252
+bandwidth 64
+no shut
+int S0/0/1
+ip addr 192.168.10.5 255.255.255.252
+no shut
+en
+conf t
+router ospf 1
+network 172.16.1.16 0.0.0.15 area 0
+network 192.168.10.0 0.0.0.3 area 0
+network 192.168.20.4 0.0.0.3 area 0
+exit
+int loopback 0
+ip addr 10.1.1.1 255.255.255.255
+en
+conf t
+int S0/0/0
+ip addr 172.30.1.1 255.255.255.252
+ip addr 192.168.10.1 255.255.255.252
+int s0/0/1
+b 64
+exit
+int loop1
+ip addr 172.30.1.1 255.255.255.252
+exit
+ip route 0.0.0.0 0.0.0.0 loop1
+router ospf 1
+de?
+de or?
+de o
+exit
+enable secret class
+line vty 0 4
+password cisco
+enable
+login
+line con 0
+password cisco
+login
+end
+copy run start
+
+
+
+
+
+
+en
+conf t
+hostname R2
+int Fa0/0
+ip addr 10.10.10.1 255.255.255.0
+no shut
+int S0/0/0
+ip addr 192.168.10.2 255.255.255.252
+b 64
+no shut
+int S0/0/1
+ip addr 192.168.10.9 255.255.255.252
+b 64
+no shut
+exit
+router ospf 1
+network 10.10.10.0 0.0.0.15 area 0
+n?
+net 192.168.10.0 0.0.0.3 area 0
+conf t
+router ospf 1
+net 192.168.10.8 0.0.0.3 area 0
+exit
+int lo0 10.2.2.2 255.255.255.255
+int lo0
+ip addr 10.2.2.2 255.255.255.255
+exit
+line vty 0 4
+pa?
+pas cisco
+l?
+login
+li?
+line con 0
+pas cisco
+login
+end
+copy run start
+
+
+
+
+
+en
+conf t
+h?
+h R3
+int Fa0/0
+ip addr 172.16.1.33 255.255.255.248
+no shu?
+no s?
+no sh
+int S0/0/0
+ip add?
+ip ad?
+ip a?
+ip ad 192.168.10.6 255.255.255.252
+ip ospf cost 1562
+no shut
+int S0/0/1
+ip ad 192.168.10.6 255.255.255.252
+ip ad 192.168.10.10 255.255.255.252
+ip ospf cost 1562
+no shut
+exit
+router ospf 1
+network 172.16.1.32 0.0.0.7 area 0
+n?
+net 192.168.10.4 0.0.0.3 area 0
+net 192.168.10.8 0.0.0.3 area 0
+exit
+int lo0
+ip addr 10.3.3.3
+ip addr 10.3.3.3 255.255.255.255
+line vty 0 4
+password cisco
+login
+line con 0
+pas cisco
+l?
+login
+end
+copy run start
