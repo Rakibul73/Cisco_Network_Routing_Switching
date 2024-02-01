@@ -1,0 +1,199 @@
+WEBVTT
+
+00:00.640 --> 00:08.790
+The I on the right hand side means that the network command was used to advertise the route into BGP.
+
+00:09.010 --> 00:13.630
+If you see a question mark here it means that redistribution was used.
+
+00:13.690 --> 00:16.590
+We can also see the autonomy system Porth.
+
+00:16.600 --> 00:19.020
+This is a list of autonomous system part of that.
+
+00:19.060 --> 00:21.790
+The Rock went through for this route.
+
+00:21.790 --> 00:27.940
+There isn't an autonomous system path because of this router was originated in the local autonomous
+
+00:27.940 --> 00:29.130
+system.
+
+00:29.140 --> 00:39.040
+This route however originated what was advertised from this autonomous system 65000 to the same is true
+
+00:39.070 --> 00:41.590
+for 15 1 1 0.
+
+00:41.920 --> 00:46.330
+That route originated in a tunnel system.
+
+00:46.330 --> 00:50.350
+So we should be able to ping the loop back of route too.
+
+00:51.160 --> 00:57.870
+And thats true because the route is found in the BJP routing table because it's a valid route.
+
+00:58.030 --> 01:02.030
+It's added to the IP routing table as follows.
+
+01:02.140 --> 01:04.420
+Via a BGP.
+
+01:04.420 --> 01:09.500
+And because of that I can ping the loopback of router 2.
+
+01:09.850 --> 01:18.380
+So we've successfully configured BGP between wrote a one in to in the same way router 2 has learnt about
+
+01:18.380 --> 01:20.610
+this loop back through BGP.
+
+01:20.960 --> 01:28.490
+So show IP BGP shows us that this network was learnt from this router which is Router one we can see
+
+01:28.490 --> 01:35.330
+the autonomous system Porth it originated in a tunnel system number 65000 one the next top Rodda it
+
+01:35.330 --> 01:41.180
+is 8 8 8 1 so we should be able to ping wondered.
+
+01:41.260 --> 01:47.990
+Wondered wondered one which we can so we've successfully configured BGP between these two routers and
+
+01:47.990 --> 01:49.570
+testor to connectivity.
+
+01:49.910 --> 01:55.370
+Now lets configure BGP to Rodda three.
+
+01:55.460 --> 01:57.830
+So run a BGP 65000 to
+
+02:00.840 --> 02:07.480
+neighbor 15 1 1 2 remote 2 autonomous system is sixty five thousand three.
+
+02:07.500 --> 02:17.570
+So show IP BGP and neber what you'll notice is the neighbor relationship 2 8 2 8 8 2 1 is established.
+
+02:17.760 --> 02:26.090
+But if we scroll or down notice the neighbor relationship to 15 1 1 2 is active.
+
+02:26.090 --> 02:28.850
+That means it's not working.
+
+02:28.850 --> 02:32.190
+Active means there's a problem.
+
+02:32.190 --> 02:34.850
+Show IP BGP summary.
+
+02:34.850 --> 02:44.220
+In the real world on a real router you'll see something like active here rather than a blank spec trace
+
+02:44.230 --> 02:46.000
+it doesn't show that correctly.
+
+02:46.340 --> 02:53.930
+But we can see that the status is active by using the show IP BGP neighbors command.
+
+02:53.930 --> 02:56.810
+So notice the state is active not established.
+
+02:56.810 --> 02:59.500
+That means it's not working.
+
+02:59.810 --> 03:01.800
+So I'm rodder three.
+
+03:01.910 --> 03:06.590
+We need to configure BGP to form the neighbor relationship.
+
+03:06.770 --> 03:12.720
+Again just because I want to be your neighbor doesn't mean you want to be my neighbor.
+
+03:12.980 --> 03:20.420
+Both sides have to be configured and have to be configured correctly for the neighbor relationship to
+
+03:20.420 --> 03:21.700
+come up.
+
+03:21.980 --> 03:26.580
+Now that both sides are configured correctly the neighbor relationship has come up.
+
+03:26.690 --> 03:36.540
+So show IP BGP neighbors scrolling down neighbor relationship from router to to router 3.
+
+03:36.740 --> 03:47.680
+Now shows established it's been up for 14 seconds so on wrote three let's advertise the loopback address.
+
+03:47.690 --> 03:50.660
+That's using a slash 32 mosque.
+
+03:50.780 --> 03:57.260
+We can prove that by using show IP ront noticed there's the rot in the running table.
+
+03:58.580 --> 04:11.150
+We can also advertise other interfaces on the router such as 15 wondered wondered she arose with the
+
+04:11.150 --> 04:19.120
+right mosque and 17:1 1 0 with the correct mosque.
+
+04:20.760 --> 04:22.500
+Show i.p wrong again.
+
+04:22.830 --> 04:28.590
+15 is using slushed 24 mosque 17 is using a slash 24 mosque.
+
+04:28.980 --> 04:35.650
+What you'll notice here as well is we already have BGP rots in the writing table or rodder 3.
+
+04:36.060 --> 04:37.790
+So show PBG P..
+
+04:37.990 --> 04:41.400
+There's the local BGP writing table on Route 3.
+
+04:41.730 --> 04:50.140
+This network which is the loop back of Route 1 is being advertised to rodders 3 from rodder 2.
+
+04:50.160 --> 04:57.690
+With this being the next top 15 wondered wondered one the autonomy system Porth wrote originated in
+
+04:57.690 --> 04:59.660
+sixty five thousand one.
+
+04:59.730 --> 05:06.440
+Then it went through sixty five thousand two and then it arrived at our autonomous system.
+
+05:06.480 --> 05:14.130
+The route is a valid notice over there so that means we should be able to ping the loopback of Route
+
+05:14.190 --> 05:18.850
+1 which we can debug.
+
+05:19.750 --> 05:23.850
+IP ICMP do that ping again.
+
+05:23.940 --> 05:34.210
+Notice we see the output of the debug wrote of one is sending a reply back to 15 1 1 2 which is this
+
+05:34.310 --> 05:36.360
+interface on router 3.
+
+05:36.770 --> 05:43.980
+So the show IP rot routing table looks good Lupica wrote a one loop back of Ratatouille.
+
+05:44.270 --> 05:49.230
+We've got this network 8 2 8 8 0 in the writing table so we should.
+
+05:49.250 --> 05:56.150
+As an example be able to paying the address as well as that address which we can so Rodda 3 has been
+
+05:56.150 --> 05:57.660
+successfully configured.
+
+05:57.940 --> 05:59.810
+Now we need to configure Rotto for.

@@ -1,0 +1,91 @@
+WEBVTT
+
+00:00.450 --> 00:10.670
+So in this network we've been told that Araud of one is not able to ping the loop back of Rato for this
+
+00:10.670 --> 00:21.730
+is the IP address of waterfalls loopback paying for 4.4 as we can see the ping doesn't succeed.
+
+00:21.820 --> 00:24.270
+It doesn't look like it's getting to four.
+
+00:24.670 --> 00:26.200
+Let's see how far it gets.
+
+00:26.230 --> 00:29.450
+So all trace to the loop back of rockfall.
+
+00:29.680 --> 00:34.320
+And in this example it looks like it's not even leaving the local router.
+
+00:34.600 --> 00:40.760
+We don't see the traffic get to router to route three or route.
+
+00:41.200 --> 00:43.010
+It just times out.
+
+00:43.060 --> 00:50.110
+So let's check if that route isn't the writing table the local router will simply drop the packets if
+
+00:50.110 --> 00:52.570
+the route is not in the wrong table.
+
+00:52.630 --> 01:02.460
+And as we can see that route is not in one's writing table is it in the BGP table as we can see it's
+
+01:02.460 --> 01:10.860
+not if the route is not learnt through BGP it's not going to be added to the operating table which means
+
+01:10.860 --> 01:18.210
+you won't be able to ping or send traffic to that network the local router will simply drop the traffic
+
+01:18.270 --> 01:20.580
+to that remote network.
+
+01:22.080 --> 01:24.300
+And that's what we are seeing here.
+
+01:24.300 --> 01:32.160
+So again without a rat in the IP writing table traffic is simply dropped routing protocols such as BGP
+
+01:33.150 --> 01:42.350
+add routes to the IP writing table the only routing protocol that we currently have enabled is BGP BGP
+
+01:42.360 --> 01:49.960
+seems to be working because we are receiving Roths in the BJP writing table as an example.
+
+01:50.070 --> 01:52.060
+We are learning about this network.
+
+01:52.110 --> 02:02.270
+We are learning about network show IP BGP summary shows us that we have a neighbor relationship to 8
+
+02:02.570 --> 02:04.640
+8 8 to 2.
+
+02:04.850 --> 02:08.230
+We are receiving routes from that neighbor.
+
+02:08.240 --> 02:17.930
+So again show IP BGP we can see routes have been advertised by that neighbor to the local router and
+
+02:17.930 --> 02:19.160
+we can ping
+
+02:22.610 --> 02:26.400
+17:1 one too which is Rato full.
+
+02:26.420 --> 02:36.050
+So at this point it looks like they may be a problem on Grado 4 because we can get to route for as shown
+
+02:36.050 --> 02:37.730
+by the trace route.
+
+02:38.120 --> 02:45.120
+So traffic going to 17 one 1 2 goes to router 2 then router 3 then run a full
+
+02:48.270 --> 02:53.250
+but we dont have 4.4 for that for in the running table.
+
+02:53.310 --> 02:57.840
+So lets have a look on Grada for to see if we can find a problem.

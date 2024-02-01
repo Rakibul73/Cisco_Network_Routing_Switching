@@ -1,0 +1,76 @@
+WEBVTT
+
+00:00.820 --> 00:02.640
+What we see is not wrong.
+
+00:02.650 --> 00:08.510
+A neighbor has been configured the site looks good.
+
+00:08.620 --> 00:11.990
+There is our BGP configuration.
+
+00:12.080 --> 00:13.880
+The site looks wrong.
+
+00:14.480 --> 00:27.440
+So confetti Rodda DGP sixty five thousand two new neighbor to donate to today to donate to remoted on
+
+00:27.440 --> 00:29.620
+the system sixty five thousand one.
+
+00:29.930 --> 00:39.050
+We want to change this to be neighbor to donate to donate to dot 1 and notice as soon as we do that
+
+00:39.200 --> 00:50.030
+the neighbor relationship has come up on both sides say BGP neighbor is up Chiv IP BGP neighbors on
+
+00:50.030 --> 00:51.490
+Route 1.
+
+00:51.740 --> 01:01.100
+We see that the neighbor relationship is established that looks good on the side show IP BGP neighbors
+
+01:01.100 --> 01:12.520
+rather neighbor 15 1 1 2 which is what history is established going down through the output 8 2 8 2
+
+01:12.680 --> 01:17.420
+8 1 is established that looks a lot better.
+
+01:17.680 --> 01:20.210
+Should IP BGP.
+
+01:20.210 --> 01:29.990
+We see the loop back of route one advertised so we can ping the loop back of Route 1 and on Route 1
+
+01:30.050 --> 01:32.000
+show IP BGP.
+
+01:32.030 --> 01:35.920
+We've now learnt routes from rodder to.
+
+01:36.440 --> 01:42.750
+So as an example we can paying the loopback of Route 2 as follows.
+
+01:42.830 --> 01:47.190
+Can we paying the loopback of road 3.
+
+01:47.480 --> 01:48.900
+Yes we can.
+
+01:49.010 --> 01:56.990
+So that looks good but can we paying the loop back of a fall at the moment.
+
+01:56.990 --> 01:57.860
+We can't
+
+02:00.740 --> 02:10.800
+notice network 4 doesn't appear in the BGP writing table so show IP BGP and show IP route shows us that
+
+02:11.130 --> 02:22.890
+network 4 is not in either the BGP or IP writing table but we can ping router 3 so we can get to this
+
+02:22.890 --> 02:30.520
+interface and we can get to the loopback of rotisserie but we can't get to the loopback or brought a
+
+02:30.520 --> 02:30.960
+full.

@@ -1,0 +1,112 @@
+WEBVTT
+
+00:01.000 --> 00:12.150
+So once again the loopback address of reform is Ford put forward for for We've been told that one cannot
+
+00:12.150 --> 00:14.310
+paying the Lupica of a full
+
+00:17.320 --> 00:19.200
+and as we can see that is true.
+
+00:19.560 --> 00:27.040
+Ken Rato one traced to the loop back of waterfall at the moment it doesn't look like a Rotto one is
+
+00:27.060 --> 00:28.900
+sending the traffic anyway.
+
+00:29.190 --> 00:32.010
+We don't see the trace route to go to rodded to
+
+00:34.800 --> 00:38.920
+do we have that network in IP writing table.
+
+00:38.940 --> 00:40.440
+No we don't.
+
+00:40.440 --> 00:50.130
+We only have connected and local networks in the IP writing table are we running a rotting protocol
+
+00:50.490 --> 00:58.700
+on the router show IP protocols shows us that yes we are running BGP on the router.
+
+00:59.250 --> 01:02.360
+Are we learning any routes through BGP.
+
+01:02.370 --> 01:03.070
+No.
+
+01:03.450 --> 01:11.910
+We only have routes advertised by the local router in the BGP writing table show IP BGP and neighbors.
+
+01:12.060 --> 01:15.330
+Do we have a neighbor relationships.
+
+01:15.330 --> 01:24.770
+Well we do have a neighbor configured as a to direct to donate to remote Autonomy's system number 65000.
+
+01:24.800 --> 01:30.810
+And two it's an external BGP relationship so that it looks good.
+
+01:32.400 --> 01:35.060
+The BJP state shows is active.
+
+01:35.250 --> 01:37.940
+Is that good or is that bad.
+
+01:39.160 --> 01:41.500
+And the answer is that is bad.
+
+01:41.530 --> 01:46.560
+It needs to show established for a neighbor relationship to be good.
+
+01:48.510 --> 01:53.560
+So be careful on a real BGP router.
+
+01:54.000 --> 02:03.450
+All on Jeana's 3 You won't see a blank in the output here packet traces shows a blank which implies
+
+02:03.450 --> 02:11.310
+that things are good but when you look at the neighbor relationship we see it as active which is bad.
+
+02:11.340 --> 02:15.120
+We don't want an active neighbor relationship.
+
+02:15.120 --> 02:18.420
+We want an established neighbor relationship.
+
+02:18.690 --> 02:21.090
+So there is the BGP configuration.
+
+02:21.330 --> 02:24.350
+Are we able to ping the neighbor.
+
+02:24.600 --> 02:26.300
+Yes we can.
+
+02:26.310 --> 02:29.250
+So this site looks good.
+
+02:29.250 --> 02:39.450
+What about router to so and router to show IP BGP summary Can you see the problem.
+
+02:39.480 --> 02:40.630
+What's the problem.
+
+02:40.680 --> 02:56.420
+Based on the Southport show IP BGP neighbors 15 1 1 2 shows up as established 8 8 8 8 shows up as active.
+
+02:56.420 --> 03:00.820
+What's the problem.
+
+03:00.950 --> 03:13.350
+The problem is this is the wrong IP address the IP address of Rotto one is a duty to do the dot one
+
+03:13.610 --> 03:18.030
+not a two door to door to door 8.
+
+03:18.060 --> 03:21.900
+So if we look at the configuration of BGP
+
+03:24.870 --> 03:29.850
+what we see is that the wrong neighbor has been configured.

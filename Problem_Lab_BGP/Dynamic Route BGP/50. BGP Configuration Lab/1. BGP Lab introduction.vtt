@@ -1,0 +1,49 @@
+WEBVTT
+
+00:18.280 --> 00:24.680
+BGP border gateway protocol is now a topic on the DNA exam.
+
+00:25.330 --> 00:33.180
+You need to learn BGP for your CCMA exam on the exam topics.
+
+00:33.190 --> 00:42.660
+We can do a search for BGP and in the list of topics we have configure and verify single whom's branch
+
+00:42.660 --> 00:47.270
+can activity using BGP IP version 4.
+
+00:47.380 --> 00:57.750
+This is limited to pairing and routed Vota spent using the network command only BGP is an exterior gateway
+
+00:57.750 --> 01:06.570
+protocol or aegypti that is different to protocols such as E.I. GOP always P.F. which are IGP is also
+
+01:06.570 --> 01:15.960
+called internal gateway protocols Steria gateway protocols such as BGP are used between autonomous systems
+
+01:16.540 --> 01:23.240
+whereas IGP are used within autonomous systems BGP is used on the Internet.
+
+01:23.280 --> 01:28.620
+They are two versions of BGP BGP and BGP.
+
+01:28.710 --> 01:37.890
+GP is the focus of the CCN a course e BGP runs between autonomy systems and IBG can be used within an
+
+01:37.890 --> 01:47.880
+autonomy system in a similar way to OSPF or E-I GOP BGP is a very large topic and you can spend many
+
+01:47.880 --> 01:52.010
+hours and many days studying BGP BGP.
+
+01:52.010 --> 01:56.940
+However for the CCMA is limited to this use case.
+
+01:56.940 --> 02:04.410
+In other words it's a basic introduction to BGP but you need to learn the basics of BGP and there are
+
+02:04.440 --> 02:11.420
+a few things that you need to be aware of which can trip you up or cause you problems in the exam.
+
+02:11.550 --> 02:18.120
+So make sure that you can both configure and do some troubleshooting with BGP.

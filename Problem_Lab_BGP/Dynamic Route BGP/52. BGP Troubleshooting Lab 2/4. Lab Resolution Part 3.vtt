@@ -1,0 +1,136 @@
+WEBVTT
+
+00:00.900 --> 00:04.760
+Can you see the problem with this configuration.
+
+00:04.770 --> 00:09.330
+So firstly note that a network is being advertised in BGP.
+
+00:09.630 --> 00:14.220
+But look at the subnet mask on the loopback interface.
+
+00:14.220 --> 00:18.020
+This is a Slusher 32 network.
+
+00:18.060 --> 00:21.590
+So again show run.
+
+00:21.690 --> 00:30.840
+Notice the subnet mask on the loopback interface and then look at the subnet mask on the BJP configuration.
+
+00:30.840 --> 00:39.720
+Now this is a very important difference between BGP and IGP as such as Eli GOP and OSPF the network
+
+00:39.750 --> 00:50.520
+command does not enable BGP on an interface the network command looks for this network in the IP routing
+
+00:50.520 --> 00:57.650
+table and if there's an exact match it will advertise that network through BGP.
+
+00:57.980 --> 01:08.760
+So show IP route shows us that network fall is in the IP writing table but the subnet mask is different.
+
+01:08.820 --> 01:11.670
+It's not a slice 24 subnet.
+
+01:11.670 --> 01:20.270
+So this network or doesn't appear in the IP writing table remember BGP is looking for an exact prefix.
+
+01:20.400 --> 01:28.170
+In other words the network portion and the subnet mask have to match exactly which they don't.
+
+01:28.170 --> 01:33.380
+In this example this is a Slusher 32.
+
+01:33.530 --> 01:35.410
+This is a slash 24.
+
+01:35.660 --> 01:37.140
+So there isn't a match.
+
+01:39.010 --> 01:46.240
+So even though the route appears in the operating table it's not added to the BGP routing table because
+
+01:46.240 --> 01:48.570
+there isn't an exact match.
+
+01:51.380 --> 02:05.780
+So let's fix our BGP configuration Subrata BGP 65000 for no network Forder for dot dot 4.0 mosque 2
+
+02:05.780 --> 02:10.000
+4 5 2 5 5 5 0.
+
+02:10.040 --> 02:21.840
+This needs to be network $4.40 for Mosque slash 32.
+
+02:21.940 --> 02:24.840
+So now show IP BGP.
+
+02:24.850 --> 02:33.160
+Notice that a network is in the BJP writing table the local Rodda is advertising the network.
+
+02:33.160 --> 02:41.200
+So what we should see here is that previously we didn't have a network for in the IP writing table but
+
+02:41.200 --> 02:48.390
+now we do on Rotto one can write a one ping the loop back of.
+
+02:48.580 --> 02:50.200
+Yes it can.
+
+02:50.260 --> 03:00.210
+That route has been advertised via a BGP route a one received the route from router to router to is
+
+03:00.220 --> 03:08.000
+the next top but the network originated in a tournament system sixty five thousand four.
+
+03:08.050 --> 03:14.470
+Then it went to a tournament system sixty five thousand three eventa sixty five thousand two and was
+
+03:14.470 --> 03:21.790
+advertised by a 2 8 8 or 2 2 Rato one because of the road is valid.
+
+03:21.790 --> 03:32.590
+In other words the next top is ping a bull that the round is added to the IP routing table which means
+
+03:32.590 --> 03:40.900
+that we can ping the loop back over waterfall and if we do a trace we see that the trace goes through
+
+03:40.900 --> 03:44.880
+the network via router 2 3 and 4.
+
+03:45.190 --> 03:49.300
+So weve successfully solved the problem in this network.
+
+03:49.300 --> 03:59.040
+The big takeaway here or the big thing to remember is the network command in BGP is not like network
+
+03:59.060 --> 04:04.810
+commands in OSPF for the GOP or other IGP.
+
+04:05.490 --> 04:15.520
+The network command tells BGP to look for an exact match of that network in the IP writing table.
+
+04:15.520 --> 04:24.250
+If it finds that network then it advertises it through BGP to neighboring routers but it has to be an
+
+04:24.250 --> 04:25.860
+exact match.
+
+04:25.870 --> 04:27.340
+So how did you do.
+
+04:27.400 --> 04:29.200
+Were you able to solve this.
+
+04:29.380 --> 04:38.530
+Remember BGP is an external or exterior gateway routing protocol BGP doesn't work like other routing
+
+04:38.530 --> 04:41.950
+protocols BGP is a very big subject.
+
+04:42.020 --> 04:49.330
+But for the and a course you just need to know the basics of BGP hoopy finding these troubleshooting
+
+04:49.330 --> 04:50.290
+videos useful.

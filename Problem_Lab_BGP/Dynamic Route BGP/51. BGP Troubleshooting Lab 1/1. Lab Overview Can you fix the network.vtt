@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00.530 --> 00:03.170
+It's important that you learn to troubleshoot.
+
+00:03.170 --> 00:10.820
+In preparation for the CCMA exam as well as for the real world this is a BGP troubleshooting lab.
+
+00:11.120 --> 00:12.500
+Can you solve it.
+
+00:12.500 --> 00:19.310
+Download the attached packet to trace a file and see if you can work out what the problem is in this
+
+00:19.310 --> 00:21.610
+network and get it working.
+
+00:22.450 --> 00:28.370
+We've been told in this typology that Rodda one can't ping wrote a fool.
+
+00:28.450 --> 00:34.780
+In other words one is not able to ping the loopback of Rato for connectivity is broken.
+
+00:34.790 --> 00:35.550
+No network.
+
+00:35.560 --> 00:39.300
+We've been told now can you solve the self.
+
+00:39.340 --> 00:45.790
+Download the attached packet to trace a file and see if you can resolve this without watching the video
+
+00:46.180 --> 00:50.260
+and then come back and watch me solve the problems in this network.

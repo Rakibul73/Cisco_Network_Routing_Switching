@@ -1,0 +1,220 @@
+WEBVTT
+
+00:00.330 --> 00:10.740
+So let's have a look at the BGP configuration of these rodders and write it to show run Evey's the BGP
+
+00:10.740 --> 00:16.040
+configuration on Grado three show run.
+
+00:16.170 --> 00:18.190
+Can you see the problem.
+
+00:18.480 --> 00:20.100
+What's the problem.
+
+00:21.830 --> 00:22.970
+Pause the video.
+
+00:22.970 --> 00:26.100
+Now if we need more time to find the problem.
+
+00:26.750 --> 00:35.780
+OK so notice here a neighbor 15 1 1 1 remote to tournament system sixty five thousand and four.
+
+00:36.090 --> 00:38.100
+That doesn't look right.
+
+00:38.130 --> 00:42.200
+Fifteen 1.1 one is in autonomous system.
+
+00:42.200 --> 00:45.150
+Number 65000 too.
+
+00:45.230 --> 00:52.560
+So what we should have is router BGP sixty five thousand three.
+
+00:53.450 --> 00:56.290
+So what we need to do is remove that neighbor.
+
+00:57.380 --> 01:07.130
+And what we should configure here is a neighbor relationship going to 65000 and to notices another problem
+
+01:07.190 --> 01:17.090
+we don't see the neighbor relationship come up show IP BGP neighbors shows us or maybe relationship
+
+01:17.090 --> 01:22.640
+to 17:1 one to as established and going down.
+
+01:22.640 --> 01:28.380
+We see a neighbor relationship established to 15 1 1 1 so that it looks better.
+
+01:28.430 --> 01:33.410
+The neighbor relationship is established but we should have got a notification back to the neighbor
+
+01:33.410 --> 01:43.800
+relationship came up should I be BGP neighbor on route to neighbor relationship 2 8 8 2 8 2 Daughter
+
+01:43.800 --> 01:45.670
+1 is established.
+
+01:45.990 --> 01:51.770
+So that's Rotto 1 neighbor relationship to 1 1 2.
+
+01:51.780 --> 01:55.380
+He's also established so that looks a lot better.
+
+01:55.620 --> 02:05.970
+Show IPV GP notice we see network 4 in the writing table and wrote to can now ping the loop back of
+
+02:05.970 --> 02:15.450
+rockfall and brought a one show IPB GP that the road appears in the BGP writing table and is also shown
+
+02:16.020 --> 02:24.600
+in the periodic table so we should be able to ping the loopback which we can on right for sure.
+
+02:24.610 --> 02:26.040
+My PBG p.
+
+02:26.260 --> 02:28.930
+We see the loop back of Route 1
+
+02:31.720 --> 02:34.770
+and we can ping the loop back of wrote a 1.
+
+02:34.900 --> 02:43.610
+So we've solved one of the problems in the network connectivity is now working but another problem is
+
+02:43.610 --> 02:46.670
+we don't see output on the con. of these routers
+
+02:50.270 --> 02:52.820
+and that's because I turned off
+
+02:55.630 --> 02:58.530
+logging con..
+
+02:58.540 --> 03:09.100
+I've added this command no logging console to the routers and I did that because otherwise you would
+
+03:09.100 --> 03:11.860
+see it was taking place.
+
+03:11.860 --> 03:18.460
+So what I'm going to do now is enable logging console on both routers
+
+03:21.270 --> 03:23.890
+and I'm going to reintroduce the problem.
+
+03:24.300 --> 03:30.150
+So I'm going to configure the neighbor relationship incorrectly.
+
+03:30.150 --> 03:37.380
+So what I'm going to do is remove the correct neighbor relationship
+
+03:40.020 --> 03:43.020
+and I'm going to make it.
+
+03:43.020 --> 03:45.440
+And that should be no.
+
+03:46.080 --> 03:50.500
+Notice what happens the neighbor relationship has gone down on both science.
+
+03:50.580 --> 03:55.330
+Why not introduce the wrong neighbor relationship.
+
+03:55.340 --> 04:01.750
+What we should see is an error like that peer in wrong antonymous system number.
+
+04:01.820 --> 04:08.560
+Notice we see hexadecimal values telling us that there's a problem with the neighbor relationship.
+
+04:08.900 --> 04:18.280
+And on this side we see that there's a peer neighbor relationship issue wrong autonomous system number.
+
+04:18.430 --> 04:29.260
+So I disabled logging so that you wouldn't see that problem which would make it too easy.
+
+04:29.270 --> 04:35.570
+So what I did is remove logging to the console to make it more difficult to find the problem in the
+
+04:35.570 --> 04:36.700
+real world.
+
+04:37.010 --> 04:48.380
+You're going to want to do logging con. all logging terminal so that you log on to the terminal so to
+
+04:48.410 --> 04:57.170
+moan like that when you telnet or S-sh to Rodda and in the global configuration we want to have a logging
+
+04:57.170 --> 05:00.810
+console so that we see output on the console.
+
+05:00.890 --> 05:02.360
+If you see no output.
+
+05:02.570 --> 05:09.620
+Don't forget to type to him mon or terminal monitor and make sure that logging Consul is enabled on
+
+05:09.680 --> 05:13.970
+the router so that you see what's happening in real time.
+
+05:13.970 --> 05:20.280
+Easiest way to test that is to go to a global config mode and type control Z or control it.
+
+05:20.690 --> 05:23.290
+You should see this on the console.
+
+05:23.420 --> 05:31.040
+If you don't see that that means that a logging to the console is disabled or you on a tenant sessional
+
+05:31.140 --> 05:34.900
+S-sh session and you haven't typed terminal monitor.
+
+05:35.120 --> 05:38.610
+So we successfully resolved this issue in the network.
+
+05:38.690 --> 05:46.880
+Once again Rodda one can ping the loopback of router for we can also use trace routes trace routes to
+
+05:46.910 --> 05:48.970
+the loopback of waterfall.
+
+05:49.070 --> 05:54.620
+You can see are going to write a to rodded three and then a of.
+
+05:54.710 --> 06:03.950
+So that looks good and wrote a for trace route to the loopback of wrote a one that looks good as well
+
+06:04.670 --> 06:10.110
+going to rodders 3 router 2 and then Rotto 1.
+
+06:10.130 --> 06:14.540
+So we've successfully solved the issues in this network.
+
+06:14.750 --> 06:17.430
+So that was an example of troubleshooting BGP.
+
+06:17.630 --> 06:25.740
+Remember in BGP both sides have to agree on all values just because I want to be your neighbor.
+
+06:25.850 --> 06:28.870
+Doesn't mean that you want to be my neighbor.
+
+06:28.880 --> 06:34.880
+When troubleshooting BGP make sure that the autonomous system numbers are configured correctly both
+
+06:34.880 --> 06:40.490
+sides have to agree on which IP addresses they will talk to and which Autonomy's system numbers they
+
+06:40.490 --> 06:42.110
+will talk to.
+
+06:42.110 --> 06:47.110
+I hope you enjoyed this video and I hope you found this troubleshooting lab useful.
+
+06:47.450 --> 06:48.790
+So how did you do.
+
+06:48.800 --> 06:52.540
+Were you able to solve the problems in this network.

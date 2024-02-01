@@ -1,0 +1,34 @@
+WEBVTT
+
+00:00.580 --> 00:03.380
+It now for other writers to get to this network.
+
+00:03.410 --> 00:10.750
+This network needs to be up and it needs to be advertised via the routing protocol which in this example
+
+00:10.750 --> 00:19.540
+is BGP so we can see that the network is up up the local Rodek can paying for that for that 4.4.
+
+00:19.750 --> 00:29.450
+So it looks like the network is up but is the network being advertised through BGP show IP BGP shows
+
+00:29.450 --> 00:36.160
+us the local BGP running table and notice we don't see the full network in the BJP running table.
+
+00:36.500 --> 00:41.730
+So it looks like there's a problem with BGP on the local Rodda.
+
+00:41.800 --> 00:47.570
+So show run can you see the problem.
+
+00:47.570 --> 00:57.410
+What's the problem with the configuration and to help you I'll use the command show IP rot pipe include
+
+00:57.410 --> 00:58.800
+fall.
+
+00:58.970 --> 01:06.710
+So there's the network in the IP writing table and there is the BGP configuration.
+
+01:06.710 --> 01:07.880
+What's wrong.

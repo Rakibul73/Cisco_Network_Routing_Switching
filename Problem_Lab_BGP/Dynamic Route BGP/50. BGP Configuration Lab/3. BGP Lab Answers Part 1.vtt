@@ -1,0 +1,133 @@
+WEBVTT
+
+00:00.110 --> 00:04.380
+In the apology I'm using public IP version 4 addresses.
+
+00:04.380 --> 00:08.390
+You can see a list of assigned IP version for addresses on Wikipedia.
+
+00:09.410 --> 00:18.760
+The Sadrist bloc 8 8 8 0 belongs to level 3 15 belongs to HP and 17 belongs to Apple.
+
+00:18.890 --> 00:27.440
+But we're going to use those address blocks in our network to simulate a BGP network running on the
+
+00:27.440 --> 00:32.190
+Internet of configurator the topology with basic IP addressing.
+
+00:32.420 --> 00:40.230
+So what we need to do here is configure BGP show IP interface brief shows us that with the addresses
+
+00:40.290 --> 00:50.270
+configured on gigabit 0 0 0 on Rotto 1 and those loopback addresses configured on Grada one can write
+
+00:50.270 --> 00:52.420
+a one paying Rodda too.
+
+00:52.880 --> 00:54.390
+Yes it can.
+
+00:54.410 --> 01:02.320
+So we have IP connectivity between Route 1 and router to router to also has a loopback address to configure
+
+01:02.310 --> 01:09.630
+it of to to to to to to to and IP addresses configured on the ethernet interfaces.
+
+01:09.820 --> 01:21.910
+The same is true 2:56 Lubeck address of 3.3 to 3.3 with IP addresses on Ethan and interfaces.
+
+01:21.910 --> 01:31.420
+And lastly the same thing is configured for rotifer has a loopback address configured as well as an
+
+01:31.420 --> 01:33.900
+IP address on the gigabit interface.
+
+01:34.030 --> 01:43.220
+So lets configure BGP in global configuration mode router BGP.
+
+01:43.600 --> 01:50.370
+We need to specify an autonomous system number you know example it's 65000 and 1.
+
+01:50.410 --> 01:59.230
+Now unlike IGP such as Eli GOP and always P.F. we have to manually configure a neighbor relationships
+
+01:59.670 --> 02:08.890
+in BGP in BGP we use the concept just because I want to be your neighbor it doesn't mean that you want
+
+02:08.890 --> 02:10.130
+to be my neighbor.
+
+02:10.360 --> 02:17.080
+So both sides need to be configured statically with the IP address of the neighbor to form neighbor
+
+02:17.080 --> 02:19.190
+relationships with.
+
+02:19.240 --> 02:27.020
+We then need to specify the remote autonomous system which in this example is 65000 too.
+
+02:27.320 --> 02:31.380
+So that's how you configure neighbor relationships and BGP.
+
+02:31.580 --> 02:38.950
+We can then advertise networks so network and specify and network.
+
+02:39.000 --> 02:40.900
+Now this is a really important.
+
+02:41.030 --> 02:43.710
+You need to specify a mosque.
+
+02:43.830 --> 02:45.780
+This is not an inverse mosque.
+
+02:45.780 --> 02:51.300
+This is a mosque based on the route in the writing table.
+
+02:51.300 --> 03:00.090
+So show IP wrote shows us that we have a slash 32 network directly connected that's the IP address configured
+
+03:00.120 --> 03:01.890
+on Lubec 0.
+
+03:01.980 --> 03:09.060
+So show run shows us that this IP address is configured on the loopback and it appears in the writing
+
+03:09.060 --> 03:12.450
+table as follows.
+
+03:12.450 --> 03:22.770
+That means that when we configure BGP we must configure BGP with the correct IP address and mask in
+
+03:22.770 --> 03:27.260
+exactly the same way as it appears in the writing table.
+
+03:27.640 --> 03:30.590
+Slash 32 mosque.
+
+03:30.730 --> 03:35.690
+So we use a slash 32 mosque here.
+
+03:35.910 --> 03:37.350
+So let's advertise
+
+03:40.030 --> 03:46.780
+network 8 8 8 8 0 with the mosque for that network.
+
+03:46.810 --> 03:50.640
+Notice its not an inverse mosque.
+
+03:50.750 --> 03:52.500
+It's a stented mosque.
+
+03:52.850 --> 04:00.990
+Again that's based on this information as shown in the writing table.
+
+04:01.040 --> 04:04.090
+So that's how you configure basic BGP.
+
+04:04.480 --> 04:11.540
+You specify your autonomous system number you specify your neighbor with the autonomous system number
+
+04:13.670 --> 04:16.860
+and then you advertise Rantz into the BGP writing table.

@@ -1,0 +1,337 @@
+WEBVTT
+
+00:00.790 --> 00:09.490
+So on wrote a full show IP interface brief IP addresses look good.
+
+00:09.570 --> 00:13.000
+There's the loop back serial interface.
+
+00:13.390 --> 00:19.330
+Gigabit 0 wanting to face and gigabit 00 interface
+
+00:22.120 --> 00:33.850
+serrata BGP 65000 for neighbor 8 8 to do it for that one remote to transmit system 65000 to neighbor
+
+00:33.940 --> 00:37.020
+8 8 DOD 7.1.
+
+00:37.030 --> 00:47.560
+We have to configure two relationships to Rodek two and then enable toll 1 1 1 remote to time the system
+
+00:47.560 --> 00:51.520
+number sixty five thousand three.
+
+00:51.610 --> 00:58.110
+That's the relationship to rodder 3.
+
+00:58.320 --> 01:04.390
+And then we can advertise networks so we can advertise all loopback interface.
+
+01:04.920 --> 01:07.770
+We can advertise HD 4.0
+
+01:12.690 --> 01:23.650
+advertise 8 8 7 0 advertise 12 1 1 0.
+
+01:23.850 --> 01:27.540
+It's a show I PBG at the moment shows nothing.
+
+01:27.540 --> 01:34.900
+Let's set up the neighbor relationships on Broadway two and three and hopefully that will fix the problem.
+
+01:35.250 --> 01:48.020
+Like it wrote a one song brought it to Rada BGP 65000 to neighbor a steady diet for the two remote to
+
+01:48.120 --> 01:58.170
+the system is 65000 for neighbor relationship has come up a toll a 7.2 remote autonomous system number
+
+01:58.680 --> 02:04.730
+65000 for neighbor relationship has come up.
+
+02:04.950 --> 02:09.380
+So show IP BGP summary.
+
+02:09.420 --> 02:16.950
+We've got three BGP neighbors configured so that gets rid of three
+
+02:21.870 --> 02:24.300
+confetti rodded BGP
+
+02:26.150 --> 02:28.210
+65000 and three
+
+02:31.120 --> 02:42.650
+Neva toll 1 1 2 remote autonomous system 65000 for neighbor relationships come up so the show IP BGP
+
+02:42.650 --> 02:44.330
+summary.
+
+02:44.580 --> 02:49.190
+We've got two neighbor relationships can forget.
+
+02:49.510 --> 02:56.010
+So at this point a broader one should hopefully have learnt about the rot of for's routes through rodded
+
+02:56.030 --> 02:58.220
+two and router 3.
+
+02:58.650 --> 03:01.890
+So notice there's the BGP routing table.
+
+03:02.140 --> 03:04.930
+We can see the loop back of Radio 4.
+
+03:05.110 --> 03:07.130
+It was learnt from 8 8 8.
+
+03:07.150 --> 03:10.380
+Took 2 which is Roger 3.
+
+03:10.390 --> 03:15.910
+It was also learnt from 12 0 0 2 which is router 3
+
+03:18.580 --> 03:23.640
+so one has learnt about this network from two neighbors.
+
+03:23.830 --> 03:30.490
+It originated in this autonomous system but has traversed this autonomy system and has traversed this
+
+03:30.490 --> 03:32.800
+autonomy system to get to us.
+
+03:32.800 --> 03:43.400
+We've got two routes to the Neva So we've got two routes to get to rockfall we can ping Rodda four and
+
+03:43.460 --> 03:52.160
+the trace shows us that it goes via a direct to the right to talk to BGP has a complex criteria for
+
+03:52.160 --> 03:53.960
+determining the best route.
+
+03:53.960 --> 04:00.970
+We're not going to worry too much about that in this course notice though that the best route is being
+
+04:00.970 --> 04:03.010
+put into the Oppy table.
+
+04:03.070 --> 04:06.150
+It's going via rodded too.
+
+04:06.160 --> 04:13.180
+In other words a to ready to talk to so that looks good can we paying the loop back to three.
+
+04:13.200 --> 04:14.490
+Yes we can.
+
+04:14.490 --> 04:16.190
+What about the lead back of Rodda to.
+
+04:16.200 --> 04:18.030
+Yes we can.
+
+04:18.190 --> 04:32.600
+So I brought a for has learnt about of one show I PBG P we can see the rot for Rotto one we've learnt
+
+04:32.790 --> 04:41.270
+from three neighbors 8 8 4 1 8 8 7 1 and 12 took one but one one.
+
+04:41.760 --> 04:49.150
+So these two are actually the same Rodda but BGP sees that as two separate neighbor relationships.
+
+04:49.150 --> 04:50.490
+He has an interesting one.
+
+04:50.490 --> 04:59.280
+Notice this network 8 8 4.0 has been advertised by four routers the local Radhe of four is advertising
+
+04:59.280 --> 05:10.760
+the network here Rodda two is advertising it on this link as well as via the serial link and router
+
+05:10.790 --> 05:15.480
+three is advertising that network to root for.
+
+05:15.650 --> 05:22.370
+In other words this network was advertised by Rodda to to write a 1 then to rodded three and advertised
+
+05:22.370 --> 05:30.530
+back to write a full we can see that by looking at the biggest path notice we see three autonomous systems
+
+05:30.530 --> 05:32.240
+to get to that route.
+
+05:32.380 --> 05:40.940
+But to the best route is via the local router to that destination because the local router is directly
+
+05:40.940 --> 05:43.840
+connected to that network.
+
+05:44.010 --> 05:45.670
+So it has the best route.
+
+05:45.960 --> 05:48.230
+But let's see if we can ping the loopback one.
+
+05:48.330 --> 06:00.800
+Yes we can trace to the Lubeck of right of one it's going via this link 8 8 4 1 then 8 8 2 8 to 1 BGP
+
+06:00.810 --> 06:03.050
+takes care of routing loops.
+
+06:03.120 --> 06:08.790
+So if we didn't have to worry about writing loops in the topology BGP doesn't allow Rantz advertised
+
+06:09.120 --> 06:13.640
+by the local Rodda to be advertised back in to the autonomy system.
+
+06:13.680 --> 06:20.350
+So there are no rotting loops in the apology and the network is working as expected.
+
+06:20.370 --> 06:27.990
+What I want you to see is we can have multiple BGP relationships on a road the road one has to do two
+
+06:27.990 --> 06:31.320
+separate autonomous systems Rato for
+
+06:35.490 --> 06:40.900
+has three neighbor relationships two or two the same router same autonomous system.
+
+06:40.900 --> 06:45.730
+Number one is to a separate autonomous system number BGP.
+
+06:45.750 --> 06:53.510
+However will use a complex criteria to determine the best route to a destination.
+
+06:53.560 --> 06:57.530
+So to get to one this has been chosen as the best route.
+
+06:57.700 --> 06:59.610
+Notice the greater than sign.
+
+07:00.250 --> 07:04.300
+But we do have alternate routes to the destination.
+
+07:04.330 --> 07:17.020
+So if I ping could ripple one pings succeed trace to one trace goes via 8 8 a toad forward 1.
+
+07:17.100 --> 07:26.760
+So in other words via this link what I'll do now is go to write it to and all shut gigabit 001 down
+
+07:27.930 --> 07:30.850
+so that a link has gone down.
+
+07:30.900 --> 07:33.620
+Notice the BGP relationship has gone down.
+
+07:34.110 --> 07:41.710
+So now when we trace to one that wondered wondered one it goes via eight eight to 7.1.
+
+07:41.730 --> 07:46.280
+Using this link and if we shut to that serial link down
+
+07:51.600 --> 07:57.890
+share to face brief shows us the serial interface Shibe interface serial zeros like one.
+
+07:57.920 --> 07:59.020
+Shut it down.
+
+08:03.860 --> 08:05.620
+So this should be that actually
+
+08:09.040 --> 08:09.970
+interfaces don't
+
+08:12.900 --> 08:17.030
+but a can still trace to the loopback of wrote a one
+
+08:19.730 --> 08:23.570
+because the traffic is going via toll 1 1 1.
+
+08:23.570 --> 08:34.580
+In other words via a router 3 so I'm ready to if I know shunter those interfaces again and interface
+
+08:34.580 --> 08:46.720
+gigabit to 0 0 1 shunt IP BGP summary configuration is done show IP BGP.
+
+08:47.100 --> 08:50.510
+And I was looking for neighbors but noticed the one neighbor relationship has come up.
+
+08:50.970 --> 08:53.840
+So a study to study one is established.
+
+08:53.890 --> 08:59.570
+That's to one 8.8 dot 1:56 is active.
+
+08:59.580 --> 09:05.160
+We need to wait for this neighbor relationship to come up but notice it's now just come up.
+
+09:05.250 --> 09:06.120
+So that's good.
+
+09:06.120 --> 09:12.930
+So let's look at that again show IP BGP neighbor noticed the neighbor relationship is now established
+
+09:14.240 --> 09:17.600
+and scrolling down 8 8 7 to 2.
+
+09:17.650 --> 09:26.340
+He's also established so we have the relationship established from Rotto 3 to a full so on.
+
+09:26.350 --> 09:27.300
+Rato for
+
+09:30.860 --> 09:35.480
+two neighbor relationships have come up.
+
+09:35.610 --> 09:43.130
+We can still Pinga loop back of thought of one at the moment the prompt is still going via this link
+
+09:43.740 --> 09:53.100
+because that's the oldest wrote in the writing table again BGP has a complex routing determination algorithm
+
+09:53.580 --> 09:55.990
+which you don't need to know for CCMA.
+
+09:56.580 --> 10:05.350
+But notice the best route is 12. one but one that one so hence the traffic is going via router three
+
+10:05.980 --> 10:07.690
+instead of router 2.
+
+10:07.960 --> 10:14.440
+But what this does prove is it proves that we have redundancy in our BGP topology.
+
+10:14.530 --> 10:21.880
+If a link goes down or if there's a problem in the ISP traffic it can reroute via an alternate path.
+
+10:22.610 --> 10:25.060
+BGP is very powerful.
+
+10:25.250 --> 10:34.480
+So let's break this link and what we should see is rockfall automatically sends traffic via router to.
+
+10:34.850 --> 10:38.720
+So this link is not directly connected to rockfall
+
+10:43.090 --> 10:45.030
+interface it is zero slash one.
+
+10:45.040 --> 10:46.240
+Shut it down.
+
+10:49.000 --> 10:55.320
+On wrote a full ping 1 1 1 pings succeed.
+
+10:55.440 --> 10:57.370
+Trace one 1 one 1.
+
+10:57.610 --> 11:02.210
+Notice the traffic is now going via 8 8 forward 1.
+
+11:02.560 --> 11:14.400
+So it has transitioned to using this link almost Shaktar that link and to save the configuration of
+
+11:14.430 --> 11:18.520
+all my routers again BGP is very powerful.
+
+11:20.710 --> 11:24.580
+You need to know the basics of BGP for your exam.

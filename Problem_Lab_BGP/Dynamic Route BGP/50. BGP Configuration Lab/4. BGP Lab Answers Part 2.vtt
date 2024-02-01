@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.740 --> 00:10.300
+So let's configure rockety show IP protocols shows that you know writing protocols are currently enabled
+
+00:10.300 --> 00:21.500
+on the router so Rhonda BGP 65000 into neighbor 8 8 8 to 1 remote autonomy system sixty five thousand
+
+00:21.510 --> 00:29.150
+one notice we see that a BGP relationship has come up on both sides.
+
+00:30.060 --> 00:31.710
+So show IPB GP neighbors
+
+00:34.440 --> 00:41.760
+scrolling up we can see that a neighbor relationship is established now BGP is different to other routing
+
+00:41.760 --> 00:42.860
+protocols.
+
+00:42.990 --> 00:47.530
+If you see an active relationship that means it's not working.
+
+00:47.730 --> 00:52.440
+You need to see stablished B.G. people go through different states.
+
+00:52.440 --> 00:59.910
+If you see a neighbor relationship of idle or active or anything else apart from established it means
+
+00:59.910 --> 01:01.160
+you have a problem.
+
+01:01.230 --> 01:07.940
+You must see stablished the BJP state for a working and liberation ship is established.
+
+01:08.020 --> 01:15.390
+So make sure you look for established we can see a BGP neighbor is 8 8 8 2 2 autonomous system number
+
+01:15.520 --> 01:17.320
+65000 to.
+
+01:17.610 --> 01:20.010
+It's an external BGP relationship.
+
+01:20.010 --> 01:22.340
+In other words it's using BGP.
+
+01:22.560 --> 01:26.820
+We are in a different autonomous system to our neighbor.
+
+01:27.030 --> 01:29.970
+Again make sure that you look for this.
+
+01:30.120 --> 01:32.200
+We are using BGP version 4.
+
+01:32.490 --> 01:36.390
+That's the version of BGP that we currently use.
+
+01:36.390 --> 01:44.070
+It's kind of like always a version to a whisper version 3 but the current release of BGP version for
+
+01:45.330 --> 01:55.190
+remote broader ID is to to to to to to to the Rodda ID selected in a similar way to always PFM the GOP.
+
+01:55.230 --> 02:00.800
+It's the IP address or the loopback interface.
+
+02:00.820 --> 02:03.160
+A lot of information is shown in that command
+
+02:07.370 --> 02:10.590
+the big thing to look for is show I be BGP neighbors.
+
+02:10.670 --> 02:14.000
+Is that the neighbor relationship is established.
+
+02:14.270 --> 02:21.980
+So state is established now BJP also has the command to show IP BGP summary what you should see at the
+
+02:21.980 --> 02:24.410
+end here is that it's blank.
+
+02:24.440 --> 02:29.080
+If you see a word like Idol or active It means you have a problem.
+
+02:29.300 --> 02:35.010
+It needs to be blank and you'll see something like state prefixes received.
+
+02:35.180 --> 02:37.470
+So how many rants are you receiving from your neighbor.
+
+02:39.020 --> 02:42.370
+And how long has that neighbor relationship been up.
+
+02:42.470 --> 02:49.250
+We can see we've got a neighbor to direct it to the to TV version of BGP version for Tynemouth system
+
+02:49.370 --> 02:53.150
+number of the neighbors 65000 to packet trace.
+
+02:53.160 --> 02:54.950
+It is a simulator.
+
+02:54.980 --> 02:58.570
+It's not perfect but it's good enough for CCMA.
+
+02:58.760 --> 03:06.150
+So some information here won't be exactly the same as a real router but it's enough for exam preparation.
+
+03:07.740 --> 03:15.390
+So on this router let's advertise the lookback so network to to to to to to to the mosque should be
+
+03:15.490 --> 03:17.260
+I-Slash 32 mosque.
+
+03:17.910 --> 03:32.830
+And we can also advertise the network as well as the 15 network noticed she must set the mosque here
+
+03:33.000 --> 03:36.600
+exactly the way it appears in the writing table.
+
+03:36.660 --> 03:46.210
+So the two network is using a slash 32 8 network is a slash 24 15 network is a slash 24.
+
+03:46.530 --> 03:58.800
+So again when we look at the BGP configuration slash 24 here Sless 24 is huge here to show IP BGP notice
+
+03:58.800 --> 04:02.250
+we are learning routes through BGP.
+
+04:02.380 --> 04:11.340
+Are learning about the 8 2 8 8 0 network and the 15 that wondered 1.0 network BGP has its own writing
+
+04:11.340 --> 04:14.700
+table in addition to the IP writing table.
+
+04:15.060 --> 04:21.560
+So we have the stented IP writing table and noticed we are learning about 15 not one that one touch
+
+04:21.570 --> 04:22.560
+zero.
+
+04:22.650 --> 04:27.480
+So we should be able to ping 15 wondered wondered one which we can
+
+04:30.320 --> 04:37.820
+but not we have the stented IP writing table but we also have the BGP writing table which contains networks
+
+04:37.880 --> 04:41.410
+that have been locally advertised.
+
+04:41.480 --> 04:48.980
+That means that we used the network command or redistribution on the local router to advertise that
+
+04:48.980 --> 04:51.320
+network into the BGP routing table.
+
+04:51.710 --> 04:57.670
+This network was advertised by our own neighbor 8 8 8 2.
+
+04:58.040 --> 05:04.190
+This network was advertised both by the local router as well as by the neighbor.
+
+05:04.190 --> 05:12.020
+You'll learn about weights and other BGP metrics such as local preference and made or metric in more
+
+05:12.020 --> 05:14.390
+advanced BGP courses.
+
+05:14.810 --> 05:17.740
+But for CCMA you don't need to worry too much about that.
+
+05:18.050 --> 05:24.580
+But notice the weight here is this value which is very high compared to this.
+
+05:24.830 --> 05:30.980
+And that's because this network was advertised by the local router this network was advertised by another
+
+05:30.980 --> 05:31.820
+router.
+
+05:32.150 --> 05:39.470
+The higher the weight the more believable or the more reliable a route as is often the case we believe
+
+05:39.470 --> 05:41.690
+ourselves more than others.
+
+05:41.750 --> 05:51.380
+So noodles for this network this is the best route greater than sign we believe ourselves more than
+
+05:51.380 --> 05:55.950
+we believe others and that's because it has a higher weight.
+
+05:56.110 --> 06:02.620
+So the local route takes precedence over a remote advertisement.

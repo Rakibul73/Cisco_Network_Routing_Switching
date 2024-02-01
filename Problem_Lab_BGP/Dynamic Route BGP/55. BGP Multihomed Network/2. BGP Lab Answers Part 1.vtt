@@ -1,0 +1,208 @@
+WEBVTT
+
+00:00.610 --> 00:09.230
+So let's start with a one on one show IP interface brief.
+
+00:09.550 --> 00:17.400
+We can see the IP address configured on gigabit is zero slashes zero slash zero as well as gigabit to
+
+00:17.400 --> 00:27.120
+zero slashes zero slash 1 and the link back the IP addresses look correct per the diagram and the interfaces
+
+00:27.120 --> 00:27.940
+are up up.
+
+00:27.960 --> 00:29.970
+So that's good.
+
+00:30.480 --> 00:40.410
+We could test to connectivity to prove that things are working second rate of one paying rodder to yes
+
+00:40.410 --> 00:45.980
+it can Kennet paying Rondeau three yes it can.
+
+00:45.990 --> 00:57.090
+So we have connectivity from router 1 to routed to and router 3 BGP relies on TZP which relies on Layer
+
+00:57.090 --> 00:57.840
+2.
+
+00:58.050 --> 01:06.490
+In this case Ethernet Connections we've got to make sure that layer 1 2 3 and 4 are working properly
+
+01:07.580 --> 01:10.930
+they are no access lists configured in this network.
+
+01:10.970 --> 01:12.720
+So we won't worry about that.
+
+01:12.890 --> 01:19.610
+But we've proven that IP connectivity works so let's configure BGP autonomous system number sixty five
+
+01:19.630 --> 01:30.230
+thousand one we can to specify neighbor and the first neighbor which is rodded two in autonomy system
+
+01:30.230 --> 01:33.130
+number sixty five thousand two.
+
+01:34.640 --> 01:42.650
+And then we need to configure our second neighbor which is ratus three in a tunnel system number sixty
+
+01:42.650 --> 01:44.000
+five thousand three
+
+01:48.150 --> 01:51.810
+now advertise the leap back into BGP.
+
+01:52.020 --> 02:03.540
+And while we here advertise the gigabit 000 interface and gigabit 0 0 1
+
+02:07.170 --> 02:12.910
+I made a mistake on that previous c'mon.
+
+02:13.420 --> 02:20.870
+Let me remove that the network mask has to be configured exactly.
+
+02:21.080 --> 02:28.890
+So let's confirm what I've done show run that that's the configuration BGP is configured in.
+
+02:28.890 --> 02:40.830
+Autonomous system 65000 one that looks good neighbor 8 8 8 2 2 autonomous system number 65000 to neighbor
+
+02:41.070 --> 02:46.840
+troll 0 0 2 ton system number sixty five thousand three.
+
+02:46.920 --> 02:48.150
+That looks good.
+
+02:48.450 --> 02:50.340
+That's the loop back.
+
+02:50.340 --> 02:53.700
+This is the thing to face.
+
+02:53.910 --> 02:59.280
+And this is the interface to confirm that things are configured right.
+
+02:59.280 --> 03:07.380
+We can use the IP BGP and that should tell us if our networks are advertised properly at the moment
+
+03:07.410 --> 03:11.930
+we see network 12 and network 1 but we don't see network 8.
+
+03:12.150 --> 03:15.130
+So let's confirm that it's done right.
+
+03:15.570 --> 03:18.500
+That's the IP address on the gigabit interface.
+
+03:18.840 --> 03:20.850
+And that does look right.
+
+03:20.850 --> 03:26.560
+So this may be a packet tracer issue show IP Rotch to confirm that.
+
+03:26.670 --> 03:32.660
+Notice this network is directly connected on gigabit 0 0 0.
+
+03:32.820 --> 03:38.520
+So that should be advertised into BGP.
+
+03:38.560 --> 03:45.240
+Again this may be a packet trace a problem no rats are currently showing.
+
+03:45.240 --> 03:53.460
+So what I'll do is all configure Rodda to and router free and hopefully packet tracer will sort itself
+
+03:53.460 --> 03:54.130
+out.
+
+03:54.400 --> 03:59.930
+So the only issue using simulators you may have funny behavior.
+
+04:00.350 --> 04:11.460
+So in order to show IP interface brief IP address he looks at IP addresses on these interfaces look
+
+04:11.490 --> 04:15.310
+correct and we've got to loop back interface.
+
+04:15.360 --> 04:21.780
+So what I'll do is just configure the link to write a one on both Rodek to and Roger 3 and see if we
+
+04:21.780 --> 04:25.330
+can get to that relationship coming up.
+
+04:25.770 --> 04:38.940
+Serrata BGP 65000 to neber 8 8 2 8 to 1 remote autonomy system 65000 1 BGP relationship has come up.
+
+04:38.940 --> 04:44.900
+So that's a good on a one we can see the neighbor relationship come up.
+
+04:44.900 --> 04:49.640
+Should I be BGP and now the rats are showing in the writing table.
+
+04:49.710 --> 04:54.020
+So I was just a bit impatient with packet tracer.
+
+04:54.070 --> 05:00.170
+Again this is a simulation so you can have problems.
+
+05:00.980 --> 05:08.520
+I'll advertise the loop back and I'll advertise 8 8 8 2 0.
+
+05:10.320 --> 05:20.010
+And while I'm here advertise these two networks so Network 8 8 4 0
+
+05:23.150 --> 05:29.200
+network 8 8 7 0.
+
+05:29.420 --> 05:30.410
+So there we go.
+
+05:32.430 --> 05:37.220
+Show IP BGP we can see a bunch of rats in the writing table.
+
+05:37.260 --> 05:49.500
+Let's have a look at raht of one show IP BGP Rotto displaying and we can ping the loop back of rockety.
+
+05:49.520 --> 05:59.690
+So what I'll do now is configure rodder three so on router 3 router BGP 65000 and three.
+
+06:00.010 --> 06:10.290
+That's our autonomous system number neighbor 12 0 0 1 remote autonomy system sixty five thousand and
+
+06:10.290 --> 06:13.520
+one neighbor relationship has come up.
+
+06:13.520 --> 06:23.360
+Network 12 0 0 0 mosque 24 mosque network advertise the loopback
+
+06:25.790 --> 06:39.760
+network and we need to advertise this network 12 1 1 0 so Network 12 1 1 0 a mosque and all uses Flash
+
+06:39.830 --> 06:40.840
+24 mosque
+
+06:44.660 --> 06:53.310
+so show PBG this network is showing the network is showing it's being advertised by the local Rodda.
+
+06:53.350 --> 07:01.210
+This network has shown advertised by the local Rodda so on Grado one 10 we paying the loop back of Rotto
+
+07:01.210 --> 07:02.830
+3.
+
+07:04.180 --> 07:15.340
+Yes we can show PBG we need the shows us that we have a neighbor relationship that's established 2 8
+
+07:15.540 --> 07:25.210
+8 8 to 2 and we have a neighbor relationship to 12 0 0 2 that's established so both neighbor relationships
+
+07:25.210 --> 07:28.460
+on the site are established so that it looks good.
+
+07:28.480 --> 07:32.270
+So now let's configure customer to
+
+07:35.090 --> 07:40.460
+and get it to talk to both use piece.

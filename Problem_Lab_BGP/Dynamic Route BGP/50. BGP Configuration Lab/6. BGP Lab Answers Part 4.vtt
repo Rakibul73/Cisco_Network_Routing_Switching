@@ -1,0 +1,121 @@
+WEBVTT
+
+00:00.420 --> 00:12.330
+So write a full show IP protocols no protocols of running at the moment rota BGP 65000 for nevus 17
+
+00:13.040 --> 00:14.790
+1 1 2 remote.
+
+00:14.840 --> 00:23.680
+Yes 65000 and 3 and put the wrong IP address they should be 17 1 1 1.
+
+00:23.700 --> 00:25.140
+Now what's the problem.
+
+00:25.150 --> 00:26.980
+What have I got to do.
+
+00:27.190 --> 00:34.490
+I forgot to configure rodder three with 4S details
+
+00:37.340 --> 00:39.570
+so I need to do the site as well.
+
+00:39.810 --> 00:43.490
+Otherwise the neighbor relationship won't come up.
+
+00:45.460 --> 00:45.730
+So
+
+00:48.370 --> 00:58.810
+17:1 want to promote a yes 65000 full notice the neighbor relationship has come up.
+
+00:58.940 --> 01:03.430
+It's really important to have your documentation right on the site.
+
+01:03.440 --> 01:06.650
+Notice that neighbor relationship has come up as well.
+
+01:06.650 --> 01:09.810
+So let's advertise the loopback address.
+
+01:11.550 --> 01:13.620
+Notice I should specify the mosque
+
+01:17.040 --> 01:21.000
+and I can also advertise 17 1 1 0 with the mosque.
+
+01:21.000 --> 01:26.330
+You don't have to advertise them both sites but you can do that.
+
+01:26.360 --> 01:31.020
+So show IP BGP we are seeing results in the writing table.
+
+01:31.340 --> 01:36.580
+These eight these 15 to 17.
+
+01:36.800 --> 01:43.220
+Again you don't have to advertise on both sides but you can do that in case one of the broadcast goes
+
+01:43.220 --> 01:47.000
+down or an interface goes down in your network.
+
+01:47.000 --> 01:50.310
+If multiple routers advertise you have redundancy.
+
+01:50.430 --> 01:55.670
+So notice this network and all expand the console window.
+
+01:57.880 --> 02:02.130
+Network originated in the autonomy system.
+
+02:02.290 --> 02:09.450
+Then it went through this autonomous system then through this autonomy system and then the local autonomous
+
+02:09.450 --> 02:13.690
+system received the route the route is valid.
+
+02:13.900 --> 02:16.120
+Next hop is the router.
+
+02:16.510 --> 02:22.420
+So we should be able to ping the loopback of thought of one which we can we should be able to trace
+
+02:22.620 --> 02:33.250
+the loop back to one which we can traffic went to route history right it to and then wrote a one in
+
+02:33.250 --> 02:42.650
+the same way show IP BGP on route one shows us the loop back of Rato for the network originated in this
+
+02:42.670 --> 02:49.660
+autonomy system went through those autonomous system then the autonomy system and was then received
+
+02:49.660 --> 02:52.230
+by the local autonomous system.
+
+02:52.240 --> 02:59.370
+The rot was advertised by Rodda to second rate of one paying the loopback of waterfall.
+
+02:59.530 --> 03:00.640
+Yes it can.
+
+03:00.670 --> 03:03.070
+Can we trace to the loopback of waterfall.
+
+03:03.250 --> 03:04.410
+Yes we can.
+
+03:04.720 --> 03:10.440
+So weve successfully configured this network with BGP.
+
+03:10.540 --> 03:11.930
+How did you do.
+
+03:11.950 --> 03:15.490
+Were you able to configure the network and get it working.
+
+03:15.580 --> 03:23.340
+Make sure that you can before you go for your CCMA exam the next video is a troubleshooting video.
+
+03:23.440 --> 03:28.060
+Make sure that you can troubleshoot BGP before taking your exam.

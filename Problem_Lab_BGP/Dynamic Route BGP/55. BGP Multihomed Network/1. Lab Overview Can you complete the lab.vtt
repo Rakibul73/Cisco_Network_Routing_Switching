@@ -1,0 +1,124 @@
+WEBVTT
+
+00:00.600 --> 00:06.440
+In previous typologies we configured a single hoop and BGP network.
+
+00:06.660 --> 00:14.490
+In other words the custom Aurora only had a single connection to another Rodda in the real world.
+
+00:14.670 --> 00:21.310
+Businesses may only have a single connection to the Internet service providers or ISP.
+
+00:21.660 --> 00:25.490
+So that's called a single human connection.
+
+00:25.530 --> 00:33.390
+It could be any kind of wind connection so it could be a DSL Cable cereal or emplace connection but
+
+00:33.390 --> 00:40.960
+for additional redundancy enterprises may have what are called Duell home to connections.
+
+00:41.160 --> 00:48.150
+So as an example customer to here has two connections to the same ISP router and for additional redundancy
+
+00:48.630 --> 00:52.730
+they may have singleton multi-hundred connections.
+
+00:52.770 --> 00:57.750
+In other words they have connections to multiple on use PS in this typology.
+
+00:57.750 --> 01:01.410
+Customer one has a connection to level 3.
+
+01:01.410 --> 01:05.320
+That is one ISP as well as AT&amp;T.
+
+01:05.400 --> 01:12.260
+So in other words the customer has redundancy here because if there's a problem in the Level 3 autonomous
+
+01:12.270 --> 01:22.320
+system traffic can be rerouted via AT&amp;T customer to has additional redundancy in that it has a jewel
+
+01:22.340 --> 01:30.300
+homed connection to level 3 but it also has an additional connection to AT&amp;T.
+
+01:30.300 --> 01:38.640
+So in this example custom 2 has redundancy of links to level 3 as well as redundancy of peace.
+
+01:38.810 --> 01:46.500
+If for example the primary ISP is AT&amp;T and there's a problem on this link or there's a problem in the
+
+01:46.500 --> 01:51.350
+Autonomy's system traffic can be sent via level 3.
+
+01:51.450 --> 01:56.810
+If there's a problem on this Ethan link then traffic can go via an alternate link.
+
+01:57.800 --> 02:04.670
+So we have multiple links for redundancy in the topology now at CCMA level.
+
+02:04.760 --> 02:13.760
+We don't get into routing metrics so we don't look at using local preference wait autonomous system
+
+02:13.760 --> 02:19.710
+path lengths and other criteria to force traffic to go one way rather than another way.
+
+02:20.940 --> 02:29.950
+At CC MP and CCSB level you'll learn how to manipulate BGP routes to force traffic to go across one
+
+02:29.950 --> 02:39.040
+link and if they have problems to go across an alternate link or to load sharing with some traffic users
+
+02:39.040 --> 02:43.110
+one link and other traffic uses an alternate link.
+
+02:43.330 --> 02:47.220
+So you share your traffic across both links in this typology.
+
+02:47.220 --> 02:55.930
+We have both an Ethernet and serial connection from customer to to level 3 at CC MP and CCI level.
+
+02:56.050 --> 03:00.230
+You'll learn about how to force traffic to use one path rather than another.
+
+03:00.530 --> 03:03.910
+At CCMA we're not concerned about that.
+
+03:03.940 --> 03:09.150
+All I want you to learn here is how to make connections to multiple ISP.
+
+03:09.340 --> 03:10.630
+From a customer.
+
+03:11.020 --> 03:17.760
+So how would you configure a custom t to talk to level 3 as an example when you've got two links.
+
+03:17.770 --> 03:21.330
+And how would you get customers to talk to two ISP.
+
+03:21.670 --> 03:27.800
+So download the package trace a topology and see if you can do this yourself or configure it.
+
+03:27.820 --> 03:33.220
+The links are configured to the IP addresses but nothing else is being configured.
+
+03:33.220 --> 03:39.650
+You'll know that you've successfully got this working when customer one can ping the loopback of customer
+
+03:39.670 --> 03:43.930
+to route for the loopback afforded for that 4.4.
+
+03:44.270 --> 03:46.750
+Rhoda one has a loop back of wondered wondered what.
+
+03:46.750 --> 03:54.160
+One makes sure that the routers can ping each other's loop BACS make sure that you see multiple routes
+
+03:54.190 --> 04:01.090
+in the wrong table going through different autonomous systems so see if you can do this yourself in
+
+04:01.090 --> 04:02.470
+the next video.
+
+04:02.470 --> 04:05.630
+I'll show you how to configure this network and get it working.

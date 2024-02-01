@@ -1,0 +1,259 @@
+WEBVTT
+
+00:00.250 --> 00:14.590
+So in rotisserie show IP BGP network 4 doesn't show in the BJP writing table show IP BGP neighbor the
+
+00:14.680 --> 00:19.070
+neighbor relationship 1 1 2 is established.
+
+00:19.300 --> 00:26.990
+So we have a neighbor relationship to Rodda to scrolling down the neighbor relationship to 17:1 one
+
+00:27.010 --> 00:31.660
+too which is rockfall is currently active.
+
+00:31.660 --> 00:33.000
+That's not good.
+
+00:34.650 --> 00:41.110
+Show run BGP configuration looks good.
+
+00:41.520 --> 00:52.230
+We've got a neighbor relationship configured and brought a full show run.
+
+00:52.270 --> 00:58.420
+We've got this neighbor relationship configured so show IP BGP naver
+
+01:01.140 --> 01:08.360
+we've got the same problem on a waterfall neighbor relationship he's active rather than established.
+
+01:08.370 --> 01:16.140
+So again looking at that configuration BGP looks good.
+
+01:16.140 --> 01:20.780
+So is there another problem lower in the assigned model.
+
+01:20.970 --> 01:27.990
+The routing looks good but can wrote a full ping router three.
+
+01:28.070 --> 01:29.960
+It doesn't look like it can.
+
+01:30.170 --> 01:34.670
+Can't ping the IP address.
+
+01:34.780 --> 01:38.850
+Ken wrote a sweeping reform.
+
+01:39.310 --> 01:41.260
+It's not able to do that.
+
+01:41.710 --> 01:44.480
+All the interfaces up.
+
+01:44.570 --> 01:46.250
+So show IP interface brief
+
+01:48.790 --> 01:52.710
+interfaces up a line protocol is up.
+
+01:52.750 --> 01:55.580
+What about on the side show IP interface.
+
+01:55.600 --> 02:07.000
+Brief interfaces up line protocol is up but can you see the problem.
+
+02:07.180 --> 02:10.020
+What's the problem in this network.
+
+02:11.690 --> 02:19.400
+So these two routers are connected via gigabit 00 on brought a full This is the IP address on gigabit
+
+02:19.470 --> 02:26.030
+00 on router 3 however gigabit or 00 has the same IP address.
+
+02:26.090 --> 02:28.540
+It's the wrong IP address.
+
+02:28.820 --> 02:35.070
+So show run this IP address is incorrect.
+
+02:35.570 --> 02:48.160
+So interface gigabit 0 0 IP address 17 1 1 1 subnet mask of 24 can rotisserie now ping wrote a full
+
+02:49.860 --> 02:54.510
+Yes it can show IP BGP neighbor
+
+02:58.690 --> 03:08.020
+neighbor relationship to 15 is still established neighbor relationship to 17 1 1 2 is set to 2 active
+
+03:08.960 --> 03:12.670
+BGP may take a while to bring up the neighbor relationship.
+
+03:12.980 --> 03:19.850
+And there you go it's just gone up on both sides so we can see the neighbor relationship is now up on
+
+03:19.850 --> 03:22.520
+the side of i.p BGP neighbors.
+
+03:25.580 --> 03:30.470
+Notice the neighbor relationship to rodder 3 is now established.
+
+03:30.740 --> 03:32.370
+So that looks a lot better.
+
+03:33.560 --> 03:39.200
+So unright a one show IP BGP we haven't learnt about network 4 yet.
+
+03:39.200 --> 03:41.170
+That may take a while.
+
+03:43.080 --> 03:47.960
+Let's check if a network for was advertised at or three.
+
+03:48.030 --> 03:53.600
+So show IP BGP we are now learning about network 4.
+
+03:53.910 --> 03:57.220
+So can we ping network for yes we can.
+
+03:57.510 --> 03:59.160
+What about on rodded to
+
+04:02.470 --> 04:08.340
+we all seeing a problem here between Route One and router to.
+
+04:08.690 --> 04:10.130
+So we need to investigate that.
+
+04:10.120 --> 04:16.450
+So shop IP BGP summary that looks OK but are we learning about network fall.
+
+04:16.670 --> 04:23.830
+Yes we are serrata to paying the Lubeck of a waterfall show IP BGP neighbors.
+
+04:23.960 --> 04:27.880
+Let's see if there's a problem between one and two.
+
+04:28.550 --> 04:35.810
+We told here that the state is idle.
+
+04:35.940 --> 04:42.930
+So let's see what the problem is looks like it's now come up again without me doing anything.
+
+04:42.930 --> 04:46.390
+So this may be a package Tracy issue.
+
+04:47.420 --> 04:47.760
+Sure.
+
+04:47.770 --> 04:51.880
+And PBG P The rot has now been learnt.
+
+04:52.060 --> 04:56.170
+So can we paying for that for that forward for.
+
+04:56.230 --> 05:05.170
+Yes we can show IP wrote shows us that route in the IP writing table show IP BGP shows us that route
+
+05:05.520 --> 05:07.480
+in the BJP writing table.
+
+05:07.570 --> 05:16.120
+It originated in a tunnel system number 65000 for went to 65000 three then to 65000 to was advertised
+
+05:16.120 --> 05:19.320
+by this rodded to the local Rodda.
+
+05:19.450 --> 05:25.660
+So we've now got that wrote in the local routing table.
+
+05:25.990 --> 05:31.100
+So it looks like it just took a trace a bit of time to sort itself out.
+
+05:31.960 --> 05:35.790
+And it looks like things are now working as they should.
+
+05:35.910 --> 05:36.240
+Right.
+
+05:36.250 --> 05:39.640
+One can paying the loopback of wrote a full
+
+05:42.290 --> 05:46.660
+now c'mon to remember for the real world is show TZP brief.
+
+05:46.790 --> 05:47.720
+This will show you.
+
+05:47.720 --> 05:58.910
+Connections between BGP routers BGP users TCAP so we can see that router too has initiated a TCAP session
+
+05:58.910 --> 06:04.820
+to the local router BGP uses TZP port 179.
+
+06:04.820 --> 06:07.760
+This is a ephemeral or random port number.
+
+06:08.090 --> 06:19.390
+So rodded to initiated the session to the local writer wrote a one show TZP brief on Route 3.
+
+06:19.700 --> 06:32.340
+We can see that 15 1 1 2 router 3 initiated a session to Rohtak to and it initiated a session to a for
+
+06:33.170 --> 06:38.510
+established means that the TZP sessions have been established.
+
+06:38.540 --> 06:45.950
+If you don't see DCP sessions established between your routers you've probably got a problem with either
+
+06:46.340 --> 06:49.120
+late to late free will leave for
+
+06:52.180 --> 06:58.900
+as an example on rodder 3 or shut the interface down show TZP brief.
+
+06:59.120 --> 07:07.930
+Notice we no longer have a TZP session between 17 1 1 1 and 17 1 1 2.
+
+07:08.070 --> 07:16.590
+If I know shutter that interface interfaces come up what we should see is that a relationship is established
+
+07:16.590 --> 07:20.190
+between the two routers.
+
+07:20.200 --> 07:26.380
+Now you might have to wait a while but notice we now see that the BGP relationship has come up and we
+
+07:26.380 --> 07:34.160
+can see that Rotto fall initiated to the BGP session to rodded 3.
+
+07:34.210 --> 07:44.470
+So that was different to what we saw previously previously rodder 3 initiated the session to rockfall
+
+07:44.920 --> 07:50.810
+that now run a four initiated session to Route 3.
+
+07:50.860 --> 07:53.850
+It doesn't matter who initiates the session.
+
+07:54.190 --> 08:02.830
+We simply want to see that the TCAP sessions are established and we want to see that
+
+08:05.870 --> 08:10.200
+BGP relationships are established between neighbors.
+
+08:10.490 --> 08:13.190
+Packet tracer shows this incorrectly.
+
+08:13.190 --> 08:18.040
+We see a blank in the real world when the sessions I step list here.
+
+08:18.170 --> 08:25.520
+So with packet tracer and in your exam make sure that you use the command show IP BGP neighbors and
+
+08:25.550 --> 08:33.830
+look for disestablished state to prove that the neighbor relationships are set up properly.
+
+08:34.160 --> 08:40.400
+If you see active Idol or any other word except established you have a problem.

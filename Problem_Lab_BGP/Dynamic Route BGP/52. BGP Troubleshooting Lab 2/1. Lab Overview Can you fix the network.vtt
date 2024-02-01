@@ -1,0 +1,37 @@
+WEBVTT
+
+00:00.600 --> 00:09.870
+BGP is now a topic on the CCMA exam you need to learn both the configuration and troubleshooting of
+
+00:09.930 --> 00:11.400
+BGP.
+
+00:11.460 --> 00:17.050
+This lab is a troubleshooting lab can you solve the problem in this network.
+
+00:17.050 --> 00:26.970
+Are we being told that one is not able to ping the loopback of wrongful wrote a file has a loopback
+
+00:26.970 --> 00:30.800
+address of 4 4 4 4.
+
+00:31.110 --> 00:37.100
+So we've been told that Route 1 is not able to ping the loopback 4.
+
+00:37.770 --> 00:42.740
+So Ping 4.4 for that for as we can see if that is true.
+
+00:42.880 --> 00:47.850
+Rodda one is not able to ping the loopback of Rato for now.
+
+00:47.860 --> 00:50.530
+Are you able to solve this yourself.
+
+00:50.590 --> 00:55.690
+Can you troubleshoot the network and find the problem and fix it.
+
+00:55.840 --> 01:02.520
+Download the package or trace a file and see if you can solve this yourself in the next video.
+
+01:02.590 --> 01:07.270
+I'm going to show you the solution and also teach you some tricks and tips.

@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00.350 --> 00:07.290
+In this package a Trace it typology I have full rodders Rato one writer to write a story and wrote a
+
+00:07.290 --> 00:14.910
+for each router in their own autonomy system number sixty five thousand one sixty five thousand two
+
+00:15.120 --> 00:25.570
+three and four BGP once again consists of two protocols I BGP and e BGP packet a tracer only supports
+
+00:25.590 --> 00:32.130
+e BGP but that's OK because that's required for the CC a exam.
+
+00:32.130 --> 00:37.040
+So we'll only configure BGP in those topology.
+
+00:37.440 --> 00:44.190
+Don't forget to download this packet tracer topology and try and configure it yourself.
+
+00:44.580 --> 00:52.600
+What we want to do in this topology is configure BGP and enable connectivity between router 1 and Grado
+
+00:52.680 --> 01:00.870
+for if you can ping from the Luebeck of wrote a one to the loopback of wrote a for and back again it
+
+01:00.870 --> 01:04.170
+means that you've successfully configured the topology.

@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00.740 --> 00:10.600
+BGP is now part of the DNA you need to know how to configure and troubleshoot BGP for your CCMA exam.
+
+00:10.670 --> 00:13.160
+This is a BGP trouble shooting video.
+
+00:14.110 --> 00:22.360
+We've been told that in this typology Rotto one is not able to ping the loop back of Aurora for wrote
+
+00:22.370 --> 00:34.650
+a four has a loopback address of 4.4 at 4.4 and of one is not able to ping that address can you resolve
+
+00:34.650 --> 00:38.500
+with a network issues and get this network up and running.
+
+00:38.670 --> 00:46.020
+Download the packet to trace a file and see if you can solve the problems yourself in the next video.
+
+00:46.020 --> 00:51.800
+I'm going to show you how to resolve the problems and get the network working again.

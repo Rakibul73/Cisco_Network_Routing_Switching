@@ -1,0 +1,178 @@
+WEBVTT
+
+00:00.330 --> 00:07.080
+So we've been told that one can't ping a waterfall it can ping the loopback of a waterfall and that
+
+00:07.080 --> 00:08.220
+looks correct.
+
+00:08.490 --> 00:12.040
+Can we trace to the loopback of wrote a file.
+
+00:12.150 --> 00:15.640
+It looks like we can't trace trace route.
+
+00:15.690 --> 00:18.600
+He's not showing any next tops.
+
+00:18.660 --> 00:21.030
+In other words we're not seeing router 2.
+
+00:21.300 --> 00:24.200
+We simply seeing packets being dropped.
+
+00:24.220 --> 00:26.170
+Show IP BGP.
+
+00:26.250 --> 00:33.090
+We also don't have network for the BJP running table but we do see network 15.
+
+00:33.090 --> 00:35.680
+In other words we see this network.
+
+00:35.930 --> 00:39.690
+So can we ping 15 of one to one or two.
+
+00:40.290 --> 00:44.010
+That's the IP address doesn't look like we can.
+
+00:44.220 --> 00:47.160
+So we can ping rodder three.
+
+00:47.160 --> 00:47.560
+Can we.
+
+00:47.570 --> 00:50.390
+Paying Rodek to.
+
+00:50.460 --> 00:51.900
+Yes we can.
+
+00:51.900 --> 01:00.000
+So in other words we can get from one to the network but we can ping the IP address.
+
+01:00.270 --> 01:08.270
+Now on router to see a lot of problems with getting BGP notifications here stating that the neighbor
+
+01:08.650 --> 01:15.380
+15 at one end and one or two is in the wrong Autonomy's system.
+
+01:15.420 --> 01:21.820
+So based on those output do you know how to fix the network.
+
+01:21.960 --> 01:30.190
+When we look at raw history we also see problems notifications are being received from 17:1 one 2 which
+
+01:30.190 --> 01:35.970
+has wrought a fall and notifications are being received from 15 1 1 1.
+
+01:35.970 --> 01:41.940
+Now when we receive the BJP notification it means that the neighbor relationship is being torn down
+
+01:42.350 --> 01:48.990
+when other words reset the neighbor relationship will not come up when a neighbor relationship is reset
+
+01:50.490 --> 01:59.940
+so the fact that rotisseries getting those messages from both wrote a full and Rodda to tells us that
+
+01:59.940 --> 02:03.570
+theres probably an issue on route three.
+
+02:03.720 --> 02:12.120
+Now the fact that we also getting those messages means that we have IP communication to those two routers
+
+02:12.630 --> 02:16.200
+and we can prove that by doing pings which work
+
+02:20.520 --> 02:25.030
+so have a look at the configuration can you see the problem.
+
+02:25.200 --> 02:29.030
+What's the problem in this configuration.
+
+02:29.040 --> 02:33.740
+Let's have a look at route a TV show run.
+
+02:33.880 --> 02:37.260
+They brought it to his rotisserie.
+
+02:37.390 --> 02:39.250
+What's the problem.
+
+02:40.560 --> 02:48.430
+Notice rotisseries trying to form a relationship to 15 1 1 to this IP address to a neighbor in Autonomy's
+
+02:48.480 --> 02:52.480
+system which is correct per hour diagram.
+
+02:52.500 --> 03:00.780
+But when we look at rotisserie we see that BGP is configured in autonomous system number sixty five
+
+03:00.870 --> 03:09.090
+thousand five so the wrong autonomous system number has been configured so show IP BGP neighbors an
+
+03:09.090 --> 03:23.130
+example shows us that the neighbor relationships are idle 15 one on one is idle 17 1 1 2 idle the neighbor
+
+03:23.130 --> 03:30.470
+relationships are being reset because of the wrong Autonomy's system numbers configured now noticed
+
+03:30.500 --> 03:41.210
+what happens if I try and enable BGP an autonomous system number 65000 three BGP can only run in one
+
+03:41.210 --> 03:42.820
+autonomous system.
+
+03:42.860 --> 03:46.400
+So we told that BGP is already running.
+
+03:46.400 --> 03:57.770
+So we need to remove the BGP 65000 5 and then enable BGP in the Thomas system number and then we can
+
+03:57.770 --> 04:00.760
+paste the configuration back in.
+
+04:01.130 --> 04:09.540
+And notice we can see that neighbor relationships have now come up so show I.P DGP neighbors on rodders
+
+04:09.560 --> 04:17.490
+three we can see that 15 1 1 1 which is wrong too.
+
+04:17.780 --> 04:22.460
+He's now established 17 1 1 2.
+
+04:22.600 --> 04:26.560
+He's now established neighbor relationships up.
+
+04:26.960 --> 04:35.260
+So show IP BGP we all learning Roths wrote a three can ping the loop back of Route 1 and it can ping
+
+04:35.530 --> 04:39.470
+the loopback or proto full that looks a lot better.
+
+04:39.760 --> 04:48.900
+So it can run a one ping the loopback of wrote a full Yes it can so trace to run a full trace works.
+
+04:50.820 --> 05:03.120
+On wrote a full paying loop back over out of one trace to write a one both ping and trace complete successfully.
+
+05:03.120 --> 05:08.070
+So we've now resolved the problem in the network.
+
+05:08.160 --> 05:15.690
+If you see messages like these BGP notification peer Imraan autonomy system number it means that either
+
+05:15.690 --> 05:23.160
+your neighbor relationship is configured incorrectly or that the local BGP autonomous system number
+
+05:23.700 --> 05:30.710
+has been incorrectly configured so check your neighbor's statements and check your local BGP Turnham
+
+05:30.710 --> 05:35.280
+system number both sides have to be configured correctly.
+
+05:37.090 --> 05:41.270
+With values that are agreed upon by both sides.
+
+05:41.350 --> 05:46.780
+If either side is configured incorrectly the BGP relationship will not come up.

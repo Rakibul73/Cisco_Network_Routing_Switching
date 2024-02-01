@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00.970 --> 00:08.290
+BGP is part of the CC in a exam you need to ensure that you can troubleshoot BGP.
+
+00:08.440 --> 00:10.810
+This lab is a troubleshooting lab.
+
+00:11.230 --> 00:19.480
+We've been told that wrote a one on the left cannot ping the loop back wrote for Wrote a for loop back
+
+00:19.480 --> 00:21.160
+or forward forward forward for
+
+00:25.340 --> 00:26.690
+show IPN to face brief.
+
+00:26.690 --> 00:33.910
+Shows us the loopback address of a waterfall and we can see that Route 1 is not able to ping the loop
+
+00:33.920 --> 00:35.670
+back over waterfall.
+
+00:35.900 --> 00:38.610
+Are you able to solve this problem.
+
+00:38.660 --> 00:45.450
+Download the packet to trace it topology and see if you can solve this yourself in the next video.
+
+00:45.560 --> 00:48.660
+I'll show you how do you get the network working.

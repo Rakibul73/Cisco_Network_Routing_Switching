@@ -1,0 +1,145 @@
+WEBVTT
+
+00:00.600 --> 00:05.940
+OK so let's check if we're being told the correct information.
+
+00:05.940 --> 00:13.590
+We've been told that right of one count paying it back over waterfall the loopback address off rockfall
+
+00:14.020 --> 00:14.980
+is Ford.
+
+00:15.030 --> 00:17.980
+Ford of 4.4.
+
+00:18.300 --> 00:25.110
+So we should be able to ping that IP address paying forward forward forward for at the moment it looks
+
+00:25.110 --> 00:31.030
+like we can't ping the loop back of Rodda four pings or timing out.
+
+00:31.290 --> 00:35.410
+So can we trace to forward forward forward for the trace.
+
+00:35.440 --> 00:37.520
+Doesn't seem to be going any way.
+
+00:37.710 --> 00:45.750
+So it doesn't even go to Rodda to in the typology that normally means that the road is not in the local
+
+00:45.810 --> 00:47.220
+routing table.
+
+00:47.340 --> 00:55.690
+Show IP route shows us that we don't see Ford or Ford or 4.4 in the local routing table.
+
+00:56.130 --> 00:59.130
+We do see some BGP routes.
+
+00:59.370 --> 01:05.020
+We see the loop back of water too and we see 15 1 1 0.
+
+01:05.040 --> 01:14.490
+This network in the writing table show IP BGP neighbors shows us that we have an established BGP relationship
+
+01:14.820 --> 01:25.080
+2 8 8 8 to 2 to show IP DGP shows us that we've got some BGP routes in the BGP writing table.
+
+01:25.200 --> 01:27.810
+We've got 8 2 8 8 2 0.
+
+01:28.170 --> 01:30.700
+The loopback of router to Toot.
+
+01:30.780 --> 01:31.180
+Toot.
+
+01:31.200 --> 01:31.530
+Toot.
+
+01:31.560 --> 01:39.450
+To which we can ping and 15 1 1 0 and we can also ping that address.
+
+01:39.480 --> 01:46.770
+So this network is in the writing table and we can ping 15 dog wondered wondered one can be ping 15
+
+01:46.830 --> 01:48.800
+at 1 to 1 to 2.
+
+01:49.050 --> 01:50.580
+No we can't.
+
+01:50.580 --> 01:54.580
+So in other words we can't ping from one to rodder three.
+
+01:55.080 --> 01:56.670
+Let's check on router too.
+
+01:56.990 --> 02:01.580
+Ken brought it to paying 15 one one two yes it can.
+
+02:01.800 --> 02:05.330
+So we have IP connectivity between router two and three.
+
+02:05.340 --> 02:07.690
+What about in router 3.
+
+02:07.770 --> 02:13.320
+Does it have network for in its routing table.
+
+02:13.440 --> 02:15.120
+Yes it does.
+
+02:15.180 --> 02:24.600
+So I notice this network is in the writing table and wrote 3 can ping the loopback of a waterfall but
+
+02:24.600 --> 02:31.680
+it looks like there's a problem here does it to have that rot in the writing table.
+
+02:31.680 --> 02:33.480
+No it doesn't.
+
+02:33.480 --> 02:42.540
+So in other words Rajshree is a learning about network for from Rotto for
+
+02:45.420 --> 02:54.720
+but it looks like rodder to he's not learning that network share IP BGP shows us that we've got network
+
+02:54.720 --> 03:02.070
+15 8 1 and 2 in the writing table but we don't have network 17.
+
+03:02.070 --> 03:10.500
+We don't have the loop back of free or the loop back over to 4 in the writing table but we can ping
+
+03:11.840 --> 03:13.380
+rodder 3.
+
+03:13.440 --> 03:16.190
+That means we probably go to BGP problem.
+
+03:16.200 --> 03:29.240
+So show IP BGP neighbors neighbor relationship 2 8 8 2 8 1 is established that looks good.
+
+03:29.280 --> 03:30.760
+Can you see a problem here.
+
+03:35.030 --> 03:40.160
+Notice a neighbor relationship to rodders 3 he's idle.
+
+03:40.160 --> 03:42.520
+That's definitely a problem.
+
+03:42.650 --> 03:53.350
+What about him rodder 3 show IP BGP neighbors neighbor relationship to 17:1 when t is established.
+
+03:53.400 --> 03:59.330
+Serrata three has a relationship to run a fall but the neighbor relationship to 15 wondered wondered
+
+03:59.340 --> 04:01.050
+one he's idle.
+
+04:01.470 --> 04:08.910
+But we can't paying 15 1 1 1 so it's not an IP connectivity problem.
+
+04:08.940 --> 04:11.310
+This looks like a BGP problem.
