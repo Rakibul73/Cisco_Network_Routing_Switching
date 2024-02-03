@@ -152,6 +152,8 @@ Router(config-if)#	(This is Interface level within configuration mode)
     HQ# reload
     ```
 
+<hr/>
+
 * HQ router needs to send the default route information 
     ```bash
     HQ(config)# router rip
@@ -162,6 +164,60 @@ Router(config-if)#	(This is Interface level within configuration mode)
     ```bash
     HQ(config)# router rip
     HQ(config-router)# passive-interface FastEthernet0/0
+    ```
+
+<hr/>
+
+* Configure BGP protocol on the router
+    ```bash
+    Router(config)# router bgp 100  # BGP Autonomous System number (AS)
+    Router(config-router)# network 192.168.1.0 mask 255.255.255.0  # Network advertisement
+    Router(config-router)# neighbor 192.168.2.2 remote-as 200  # Remote BGP neighbor IP and AS
+    ```
+
+<hr/>
+
+* Create a vlan on the switch 
+    ```bash
+    Switch(config)# vlan 10
+    Switch(config-vlan)# name SALES
+    Switch(config-vlan)# exit
+
+    Switch(config)# vlan 20
+    Switch(config-vlan)# name MARKETING
+    Switch(config-vlan)# exit
+
+    Switch(config)# vlan 99
+    Switch(config-vlan)# name NATIVE # Set Native VLAN
+    Switch(config-vlan)# exit
+    ```
+
+* Assign ports to VLANs on the switch
+    ```bash
+    Switch(config)# interface range fa0/1 - 24
+    Switch(config-if-range)# switchport mode access
+    Switch(config-if-range)# switchport access vlan 10
+    ```
+
+* Set up trunk port for router-on-a-stick on the switch
+    ```bash
+    Switch(config)# interface fa0/0
+    Switch(config-if)# switchport mode trunk
+    Switch(config-if)# switchport trunk allowed vlan 10,20
+    Switch(config-if)# switchport trunk native vlan 99  # Set Native VLAN
+    ```
+
+* Configure subinterfaces for router-on-a-stick on the Router
+    ```bash
+    Router(config)# interface fa0/0.10
+    Router(config-subif)# encapsulation dot1Q 10
+    Router(config-subif)# ip address 192.168.10.1 255.255.255.0
+    Router(config-subif)# exit
+
+    Router(config)# interface fa0/0.20
+    Router(config-subif)# encapsulation dot1Q 20
+    Router(config-subif)# ip address 192.168.20.1 255.255.255.0
+    Router(config-subif)# exit
     ```
 
 <hr/>
