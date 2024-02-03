@@ -1,0 +1,39 @@
+R1
+
+
+en
+conf t
+
+hostname R1
+
+enable secret class
+
+interface FastEthernet0/0
+ip address 172.16.1.1 255.255.255.0
+no shutdown
+
+interface Serial0/0/0
+bandwidth 64
+ip address 172.16.3.1 255.255.255.252
+clock rate 64000
+
+interface Serial0/0/1
+ip address 192.168.10.5 255.255.255.252
+
+router eigrp 1
+network 172.16.0.0
+network 192.168.10.4 0.0.0.3
+no auto-summary
+exit
+
+line con 0
+exec-timeout 15 0
+password cisco
+logging synchronous
+login
+
+line vty 0 4
+exec-timeout 15 0
+password cisco
+logging synchronous
+login

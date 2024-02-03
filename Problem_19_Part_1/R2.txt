@@ -1,0 +1,46 @@
+R2
+
+en
+conf t
+
+hostname R2
+
+enable secret class
+
+interface Loopback0
+ip address 10.1.1.1 255.255.255.252
+
+interface FastEthernet0/0
+ip address 172.16.2.1 255.255.255.0
+no shutdown
+
+
+interface Serial0/0/0
+bandwidth 64
+ip address 172.16.3.2 255.255.255.252
+
+interface Serial0/0/1
+bandwidth 1024
+ip address 192.168.10.9 255.255.255.252
+clock rate 64000
+
+
+router eigrp 1
+network 172.16.0.0
+network 192.168.10.8 0.0.0.3
+no auto-summary
+exit
+
+
+line con 0
+exec-timeout 15 0
+password cisco
+logging synchronous
+login
+
+line vty 0 4
+exec-timeout 15 0
+password cisco
+logging synchronous
+login
+
