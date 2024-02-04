@@ -253,3 +253,29 @@ Router(config-if)#	(This is Interface level within configuration mode)
     ```
 
 <hr/>
+
+* Configure DHCP on the switch
+    ```bash
+    Switch(config)# vlan 10
+    Switch(config-vlan)# name VLAN10
+    Switch(config-vlan)# exit
+
+    Switch(config)# interface vlan 10
+    Switch(config-if)# ip address 192.168.10.1 255.255.255.0
+    Switch(config-if)# no shutdown
+    Switch(config-if)# exit
+
+    # Configure DHCP pool with IP address range
+    Switch(config)# ip dhcp pool VLAN10_POOL
+    Switch(dhcp-config)# network 192.168.10.0 255.255.255.0
+    Switch(dhcp-config)# default-router 192.168.10.1
+    Switch(dhcp-config)# dns-server 8.8.8.8  # Optional: Specify DNS server
+    Switch(dhcp-config)# domain-name example.com  # Optional: Specify domain name
+    Switch(dhcp-config)# range 192.168.10.10 192.168.10.50
+    Switch(dhcp-config)# exit
+
+    # Save the configuration
+    Switch# write memory
+    ```
+
+<hr/>
