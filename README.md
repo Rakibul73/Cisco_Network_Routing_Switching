@@ -168,6 +168,38 @@ Router(config-if)#	(This is Interface level within configuration mode)
 
 <hr/>
 
+* Configure Eigrp protocol on the router
+    ```bash
+    Router(config)# router eigrp <AS_NUMBER> 
+    Router(config-router)# eigrp router-id <ROUTER_ID>
+    Router(config-router)# network <NETWORK_ADDRESS> <WILDCARD_MASK>
+    or
+    Router(config-router)# network <Summary_NETWORK_ADDRESS>
+    ```
+
+* Configure Eigrp Hello Interval on the interface in 30 seconds
+    ```bash
+    Router(config)# interface se0/0/1
+    Router(config-if)# ip hello-interval eigrp 100 30
+    ```
+
+<hr/>
+
+* Configure Ospf protocol on the router
+    ```bash
+    Router(config)# router ospf 1  # OSPF process ID (1-65535)
+    Router(config-router)# router-id 1.1.1.1  # Router ID
+    Router(config-router)# network 10.0.0.0 0.255.255.255 area 0  # network and WILDCARD_MASK and area
+    ```
+
+* Configure ospf Hello Interval on the interface in 30 seconds
+    ```bash
+    Router(config)# interface se0/0/1
+    Router(config-if)# ip ospf hello-interval 30
+    ```
+
+<hr/>
+
 * Configure BGP protocol on the router
     ```bash
     Router(config)# router bgp 100  # BGP Autonomous System number (AS)
